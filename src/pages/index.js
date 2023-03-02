@@ -1,6 +1,6 @@
 import styles from '@/styles/Home.module.css'
-import { HeadertHome,ContentHome,FooterHome } from "./HomePage/HomePageCon"
-import { NavbarHome } from "./Component/HomePageComp"
+import { HeaderHome,ContentHome,FooterHome } from "./HomePage/HomePageCon"
+import { NavbarHome } from "./HomePage/HomePageComp"
 import HeaderHome from "./HomePage/HomePageCon/HeaderHome"
 
 export default function Home() {
