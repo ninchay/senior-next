@@ -1,5 +1,4 @@
-
-import styles from  '../../../styles/Component/HomePage/navbarHome.module.css' ;
+import styles from  '../../../styles/HomePage/HomePageComp/navbarHome.module.css' ;
 
 const Menu = () => (
   <>

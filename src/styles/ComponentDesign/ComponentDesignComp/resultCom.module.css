@@ -1,0 +1,25 @@
+/* .Component__Result-Container {
+    width: 30%;
+} */
+
+.Result__Container_title h3{
+    font-family: var(--font-family3);
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 46px;
+}
+.Result__Container_Output {
+    display: flex;
+    margin: 16px 0;
+    margin-bottom: 46px;
+    align-items: center;
+    
+}
+.Result__Container_Output output {
+    margin-right: 7%;
+    width: 100%;
+    max-width: 113px;
+    height: 25px;
+    background: var(--color-output);
+    border-radius: 9px;
+} 

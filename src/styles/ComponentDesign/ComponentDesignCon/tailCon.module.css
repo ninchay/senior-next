@@ -1,0 +1,105 @@
+.Component__Tail-Container {
+    background: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+}
+
+.Component__Tail-Header {
+    display: flex;
+    justify-content: center;
+    margin: 49px 5%;
+    margin-top: 0;
+    border-bottom: 2px solid black;
+}
+
+.Component__Tail-Header p {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 78px;
+}
+
+.Component__Theme-Top img, .Component__Theme-Buttom img {
+    width: 100%;
+}
+
+.Component__Theme-Top, .Component__Theme-Buttom {
+    display: flex;
+}
+.Component__Tail-Calculation {
+    display: flex;
+    gap: 10%;
+    margin: 0 3%;
+}
+
+.Horizontal__Tail-Calculation {
+    flex: 1 1;
+}
+
+.Vertical__Tail-Calculation {
+    flex: 1 1;
+}
+
+.Component__Tail-Graph {
+    display: flex;
+    justify-content: center;
+    margin: 75px 0;
+    height: 500px;
+}
+
+.Component__Tail-Graph p {
+    width: 40%;
+    text-align: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.Tail__Result-Header h2{
+    font-family: var(--font-family3);
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 70px;
+    color: var(--color-bar);
+    margin-bottom: 27px;
+    margin-left: 3%;
+}
+
+.Component__Tail-Result {
+    margin: 0 5%;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+.Tail__Result-Style {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 5%;
+}
+
+.Result__Style-First,.Result__Style-Second,.Result__Style-Third {
+    display: flex;
+    flex-direction: column;
+}
+
+.Result__Style-First ,.Result__Style-Second ,.Result__Style-Third h3{
+    text-align: center;
+}
+
+.Result__Style-First output,.Result__Style-Second output,.Result__Style-Third output {
+    height: 60px;
+    width: 70%;
+    max-width: 300px;
+}
+
+.Result__Style-First .Result__Container-Output {
+    justify-content: center;
+}
+
+.Result__Style-Second .Result__Container-Output {
+    justify-content: center;
+}
+
+.Result__Style-Third .Result__Container-Output {
+    justify-content: center;
+}

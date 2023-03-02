@@ -1,15 +1,15 @@
-import '../../../styles/Component/HomePage/featureHome.module.css';
+// import styles from '../../../styles/Component/HomePage/featureHome.module.css';
 
-const featureHome = ({title}) => {
-  return (
-    <div className="Home__feature-container">
-      <div className="Home__feature-title">
-        <p><a href=''>{title}</a></p>
-      </div>
-      <div className="Home__feature-picture">
-      </div>
-    </div>
-  )
-}
+// const featureHome = ({title}) => {
+//   return (
+//     <div className={styles.Home__feature_container}>
+//       <div className={styles.Home__feature_title}>
+//         <p><a href=''>{title}</a></p>
+//       </div>
+//       <div className={styles.Home__feature_picture}>
+//       </div>
+//     </div>
+//   )
+// }
 
-export default featureHome
+// export default featureHome

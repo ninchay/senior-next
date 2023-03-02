@@ -1,4 +1,4 @@
-import styles from '../../../styles/Container/HomePage/footerHome.module.css';
+import styles from '../../../styles/HomePage/HomePageCon/footerHome.module.css';
 
 const FooterHome = () => {
   return (

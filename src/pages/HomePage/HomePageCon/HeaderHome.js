@@ -1,5 +1,5 @@
-// import billboard from '../../../assets/billboard.png'
-import styles from '../../../styles/Container/HomePage/headerHome.module.css'
+
+import styles from '../../../styles/HomePage/HomePageCon/headerHome.module.css'
 
 const HeaderHome = () => {
   return (
