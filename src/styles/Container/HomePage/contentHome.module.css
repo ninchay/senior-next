@@ -1,0 +1,88 @@
+.Home__Content_container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top:  20vh;
+    /* gap: 150px; */
+    /* flex-direction: row; */
+}
+
+/*Constraint Part*/
+.Home__content_Constraint p {
+    font-family: var(--font-family2);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-bar);
+    text-align: center;
+    padding: 30px 80px;
+    /* padding: 1.5em 3em; */
+    /* margin: 100px 100px ; */
+    margin-bottom: 3em;
+    background-color: white;
+    border-radius: 30px;
+    cursor:pointer;
+}
+
+.constraint_decor {
+    position: absolute;
+    top: 95vh;
+    scale: 0.7;
+    z-index: -1;
+}
+
+/* .constraint_decor img {
+    scale: 0.7;
+} */
+
+.Home__content_Component p {
+    font-family: var(--font-family2);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-bar);
+    text-align: center;
+    padding: 30px 69px;
+    /* padding: 1.5em 3em; */
+    /* margin: 100px 100px ; */
+    margin-bottom: 3em;
+    background-color: white;
+    border-radius: 30px;
+    cursor:pointer;
+}
+
+.Home__content_Component img {
+    margin-top: 30px;
+}
+
+.Component_decor {
+    position:absolute;
+    top: 130vh;
+    right: 50vh;
+    scale: 0.7;
+    z-index: -1;
+}
+
+
+.Home__content_Theory p {
+    font-family: var(--font-family2);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-bar);
+    text-align: center;
+    padding: 30px 67.8px;
+    /* padding: 1.5em 3em; */
+    /* margin: 100px 100px ; */
+    background-color: white;
+    border-radius: 30px;
+    cursor:pointer;
+}
+
+.Home__content_Theory img {
+    margin-top: 30px;
+}
+
+.Theory_decor {
+    position:absolute;
+    top: 97vh;
+    right: 25vh;
+    scale: 0.7;
+    z-index: -1;
+}

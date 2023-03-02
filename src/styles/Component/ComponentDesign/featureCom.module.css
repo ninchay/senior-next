@@ -1,0 +1,18 @@
+
+.Feature__Container-title h3{
+    font-family: var(--font-family3);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+}
+.Feature__Container-Input {
+    display: flex;
+    margin: 16px 0;
+    align-items: center;
+    
+}
+.Feature__Container-Input input {
+    margin-right: 7%;
+    width: 60%;
+    height: 25px;
+} 

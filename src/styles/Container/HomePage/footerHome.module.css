@@ -1,0 +1,55 @@
+.Home__Footer_container {
+    display: flex;
+    margin: 20vh 50px;
+    margin-bottom: 5vh;
+    /* gap: 200px; */
+    align-items: baseline;
+    justify-content: space-between;
+
+}
+
+.Home__footer_container_space div {
+    width: 312.76px;
+}
+
+
+.Home__Footer_container_quote p {
+    font-family: var(--font-family2);
+    font-weight: 400;
+    font-size: 28px;
+    text-align: center;
+}
+
+.Home__Footer_container_contact p {
+    font-family: var(--font-family2);
+    font-weight: 500;
+    font-size: 26px;
+    text-align: center;
+}
+
+
+.Home__Footer_container_input {
+    display: flex;
+    /* width: 100%; */
+}
+
+
+.Home__Footer_container_input input {
+    /* border: none; */
+    outline: none;
+    width: 100%;
+    font-family: var(--font-family2);
+    font-size: 20px;
+    line-height: 26px;
+    min-width: 300px;
+}
+
+.Home__Footer_container_input button {
+    border: none;
+    width: 100%;
+    font-family: var(--font-family2);
+    background-color: var(--color-bar);
+    color: white;
+    cursor: pointer;
+    font-weight: 550;
+}
