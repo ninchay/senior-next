@@ -1,5 +1,5 @@
-import { FeatureCom } from '../ComponentDesignComp/FeatureCom'
-import { ResultCom } from '../ComponentDesignComp/ResultCom'
+import { FeatureCom } from '../ComponentDesignComp'
+import { ResultCom } from '../ComponentDesignComp'
 import styles from '../../../styles/ComponentDesign/ComponentDesignCon/wingCon.module.css'
 
 const WingCon = () => {

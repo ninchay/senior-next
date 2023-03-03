@@ -26,6 +26,8 @@
     text-align: start;
     background: var(--color-bg) ;
     border-radius: 10px;
+    -webkit-animation: Navbar__Menu_Container 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: Navbar__Menu_Container 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 
 
 }
@@ -40,3 +42,28 @@
 /* .Component__Navbar-Menu img {
     cursor: pointer;
 } */
+/* .scale_up_center {
+    -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  } */
+
+  @-webkit-keyframes Navbar__Menu_Container {
+    0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes Navbar__Menu_Container {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }

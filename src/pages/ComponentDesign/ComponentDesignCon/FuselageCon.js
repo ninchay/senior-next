@@ -1,7 +1,7 @@
 import styles from '../../../styles/ComponentDesign/ComponentDesignCon/fuselageCon.module.css'
-import {ResultCom} from '../ComponentDesignComp/ResultCom'
+import {ResultCom} from '../ComponentDesignComp'
 
-const FuselageCom = () => {
+const FuselageCon = () => {
   return (
     <div className={styles.Component__Fuselage_Container}>
       <div className={styles.Fuselage__Container_Title}>
@@ -20,4 +20,4 @@ const FuselageCom = () => {
   )
 }
 
-export default FuselageCom
+export default FuselageCon

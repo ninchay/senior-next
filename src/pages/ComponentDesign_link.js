@@ -1,10 +1,10 @@
-import { FooterCon, FuselageCon, HeaderCon, TailCon, WingCon} from '../pages/ComponentDesign/ComponentDesignCon' ;
-import { NavbarCom } from '../pages/ComponentDesign/ComponentDesignComp';
+import { FooterCon, FuselageCon, HeaderCon, TailCon, WingCon} from './ComponentDesign/ComponentDesignCon' ;
+import { NavbarCom } from './ComponentDesign/ComponentDesignComp';
 import styles from '../styles/ComponentDesign/ComponentDesign.module.css';
 
 const ComponentDesign = () => {
   return (
-    <div className={styles.body}>
+    <div className={styles.App}>
       <div className="Wing">
         <NavbarCom/>
         <HeaderCon/>

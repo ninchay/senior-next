@@ -1,7 +1,7 @@
 import { ResultCom, TailFeature } from '../../ComponentDesign/ComponentDesignComp'
 import styles from '../../../styles/ComponentDesign/ComponentDesignCon/tailCon.module.css'
 
-const TailCom = () => {
+const TailCon = () => {
   return (
     <div className={styles.Component__Tail_Container}>
       <div className={styles.Component__Theme_Top}>
@@ -49,4 +49,4 @@ const TailCom = () => {
   )
 }
 
-export default TailCom
+export default TailCon

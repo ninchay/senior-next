@@ -1,6 +1,6 @@
 import styles from '../../../styles/ComponentDesign/ComponentDesignCon/headerCon.module.css'
 
-const HeaderCom = () => {
+const HeaderCon = () => {
   return (
     <div className={styles.Component__Header}>
         <div className={styles.Component__Header_title}>        
@@ -17,4 +17,4 @@ const HeaderCom = () => {
   )
 }
 
-export default HeaderCom
+export default HeaderCon
