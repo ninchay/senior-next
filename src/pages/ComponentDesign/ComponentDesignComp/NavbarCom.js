@@ -7,7 +7,7 @@ import styles from '../../../styles/ComponentDesign/ComponentDesignComp/navbarCo
 const Menu = () => (
   <>
   <p><Link href="/">Home</Link></p>
-  <p><a href="#Constraint">Constraint Diagram</a></p>
+  <p><Link href="/Constraint">Constraint Diagram</Link></p>
   <p><a href="#Background">Theoretical Background</a></p>
   </>
 )

@@ -1,0 +1,79 @@
+.card {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 8px;
+    font-family: 'Jost';
+}
+
+.container {
+    display: flex;
+    font-size: 8px;
+    flex: 0.8;
+    justify-content: space-between;
+}
+.sub_container1 {
+    margin: 2%;
+    font-size: 16px;
+    padding: 2%;
+    flex:0.4;
+    height:max-content;
+    background-color: white;
+    box-shadow: 0px 4px 4px;
+    border-radius: 20px;
+}
+.sub_container2, .sub_container3
+{
+    margin: 2%;
+    font-size: 16px;
+    padding: 2%;
+    flex:0.3;
+    background-color: white;
+    box-shadow: 0px 4px 4px;
+    border-radius: 20px;
+} 
+
+.header1, .header2, .header3 {
+    margin: 10px, 0;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: large;
+}
+
+.input_value1, .input1_2_value, .input2_value, .input2_1_value {
+    border-radius: 6px;
+    width: 100%;
+} 
+
+/* starts sub container 1 */
+    .input_container1 {
+        /* text-align: left; */
+        padding: 5px, 0;
+        text-align: left;
+    }
+
+    /* .input1, .input1_2{
+        margin-top: 4%;
+        
+    } */
+    
+    .inputSection {
+        display: flex;
+        margin: 5px;
+    }
+
+    .inputTile {
+        margin-top: 4%;
+    }
+
+    .inputValue {
+        width: 100%;
+        margin-right: 10px;
+        flex: 0.5;
+        background-color: #E9E9E9;
+        border: none;
+    }
+
+    .inputUnit {
+        flex: 0.5;
+    }

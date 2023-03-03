@@ -5,7 +5,7 @@ const ContentHome = () => {
   return (
     <div className={styles.Home__Content_container}>
       <div className={styles.Home__content_Constraint}>
-        <Link href="/ConstraintDiagram"><p>Constraint<br/>Diagram<br/>
+        <Link href="/Constraint"><p>Constraint<br/>Diagram<br/>
         <img src="/graph.png" alt='Graph'/></p></Link>
 
         <div className={styles.constraint_decor}>
