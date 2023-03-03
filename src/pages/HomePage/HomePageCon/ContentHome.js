@@ -13,7 +13,7 @@ const ContentHome = () => {
         </div>
       </div>
       <div className={styles.Home__content_Component}>
-        <Link href="/ComponentDesign_link"><p>Component<br/>Design<br/>
+        <Link href="/ComponentDesign_link" className="ComponentDesign_link_name"><p>Component<br/>Design<br/>
         <img src="/planegraphic.png" alt='Graph'/></p></Link>
         <div className={styles.Component_decor}>
           <img src="/cloud.png" alt='Cloud'/>

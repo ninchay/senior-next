@@ -4,7 +4,7 @@ import styles from '../styles/ComponentDesign/ComponentDesign.module.css';
 
 const ComponentDesign = () => {
   return (
-    <div className="App">
+    <div className={styles.body}>
       <div className="Wing">
         <NavbarCom/>
         <HeaderCon/>

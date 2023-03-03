@@ -1,28 +1,28 @@
-.Component__Wing-Container {
+.Component__Wing_Container {
     margin: 30px 0;
     display: flex;
     flex-direction: column;
 }
 
-.Component__Wing-Calculation {
+.Component__Wing_Calculation {
     display: flex;
     /* justify-content: space-evenly; */
     align-items: center;
 }
 
-.Component__Wing-Input {
+.Component__Wing_Input {
     display: flex;
     flex-direction: column;
     flex: 1 1;
     align-items: center;
 }
 
-.Component__Wing-Geometry {
+.Component__Wing_Geometry {
     display: flex;
     flex: 1 1;
     justify-content: center;
 }
-.Component__Wing-Input h2 {
+.Component__Wing_Input h2 {
     font-family: var(--font-family3);
     font-weight: 700;
     font-size: 48px;
@@ -31,7 +31,7 @@
     margin-bottom: 27px;
 }
 
-.Component__Wing-Style {
+.Component__Wing_Style {
     margin: 0 10%;
     padding: 20px 20px;
     background-color: var(--color-bg);
@@ -43,7 +43,7 @@
     justify-items: center; */
 }
 
-.Component__Wing-Style select {
+.Component__Wing_Style select {
     display: flex;
     width: 60%;
     height: 25px;
@@ -52,7 +52,7 @@
     border-radius: 6px;
 }
 
-.Component__Wing-Style .Feature__Container-Input input {
+.Component__Wing_Style .Feature__Container_Input input {
     background-color: var(--color-input);
     border-radius: 6px;
 }
@@ -64,13 +64,13 @@
     line-height: 29px;
 }
 
-.Component__Wing-Airfoil {
+.Component__Wing_Airfoil {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.Component__Wing-Airfoil h2{
+.Component__Wing_Airfoil h2{
     font-weight: 700;
     font-size: 48px;
     line-height: 70px;
@@ -117,7 +117,7 @@
     cursor: pointer;
 }
 
-.Component__Wing-Result {
+.Component__Wing_Result {
     display: flex;
     flex-direction: column;
     margin:30px 7%;
@@ -126,7 +126,7 @@
     border-radius: 20px;
 }
 
-.Component__Wing-Result h2 {
+.Component__Wing_Result h2 {
     font-family: var(--font-family3);
     font-weight: 700;
     font-size: 48px;
@@ -136,7 +136,7 @@
     margin-left: 3%;
 }
 
-.Wing__Result-Style {
+.Wing__Result_Style {
     display: flex;
     justify-content: space-evenly
 
