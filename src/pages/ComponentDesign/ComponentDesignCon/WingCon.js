@@ -2,7 +2,7 @@ import { FeatureCom } from '../ComponentDesignComp/FeatureCom'
 import { ResultCom } from '../ComponentDesignComp/ResultCom'
 import styles from '../../../styles/ComponentDesign/ComponentDesignCon/wingCon.module.css'
 
-const WingCom = () => {
+const WingCon = () => {
   return (
     <div className={styles.Component__Wing_Container}>
       <div className={styles.Component__Wing_Calculation}>
@@ -52,4 +52,4 @@ const WingCom = () => {
   )
 }
 
-export default WingCom
+export default WingCon
