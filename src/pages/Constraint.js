@@ -11,22 +11,11 @@ const Constraint = () => {
   return (
   <>
     <div classname={styles.app}>
-<<<<<<< HEAD
       <div style={{minWidth:'100%',display:'flex', flexDirection:'column', justifyContent:'center', alignItems: 'center'}}>
           <Navbar_Cons />
           <Input_Cons handleVelocityChange={(v)=>{setVelocity(v)}}/>
           <Graph_Cons velocity={velocity}/>
           <Result_Cons />
-=======
-    <div className={styles.Navbar}> 
-          <Navbar_Cons />
-    </div>
-    <div style={{minWidth:'100%',display:'flex', flexDirection:'column', justifyContent:'center', alignItems: 'center'}}>
-        <Header_Cons />
-        <Input_Cons />
-        <Graph_Cons />
-        <Result_Cons />
->>>>>>> 39bcbb61d063b3c15f7255f61d5f7f4523de2951
       </div>
     </div>
   </>
