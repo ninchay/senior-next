@@ -1,6 +1,6 @@
 import styles from '../../styles/Constraint/Input_Cons.module.css'
 
-const Input_Cons = () => {
+const Input_Cons = (props) => {
 return (
 <div className={styles.card}>
   <div className={styles.container}>
@@ -29,6 +29,7 @@ return (
                     <input 
                       className={styles.des_vel}
                       type="number"
+                      onChange={(e)=>{props.handleVelocityChange(e.target.value)}}
                     />
                     <p className={styles.inputUnit}> Unit </p>
                 </div>

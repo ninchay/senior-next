@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import Plot from 'react-plotly.js';
 import '../../styles/Constraint/Graph_Cons.module.css'
+import './Input_Cons'
 
-function Graph_Cons() {
+function Graph_Cons(props) {
+  //assign the variable
   const [WS, setWS] = useState(Array.from({ length: 121 }, (_, i) => i));
-  const [V, setVelocity] = useState(150)
-  const [parameter, setparameter] = useState({
+  const [parameter, setParameter] = useState({
     rho0: "0.0023769", //slug/ft3
     Cl_max: "1.35",
     Cl_max_to: "2.35",
@@ -16,51 +17,54 @@ function Graph_Cons() {
     roc: "16.67",
     S_L: "300",
     S_to: "200",
+    T_SL: "15", //celcius
+    R: "287.05", // J/kg * K
+    P: "101.325", //kN/m^2
   })
-
+  // solve for density
+  const T= parameter.T_SL - 1.98*(props.h/1000)
+  const P = 101.325 //kN/m^2
+  const rho_cruise=P/(parameter.R*T)
   //start constraint equation
-  const rho_cruise = setparameter.rho0 * 1;
-  const K = 1 / (Math.PI * setparameter.e * setparameter.AR);
+  const K = 1 / (Math.PI * parameter.e * parameter.AR);
   const V_stall_to = WS.map((WS) =>
-    Math.sqrt((2 * setWS.WS) / (setparameter.rho0 * setparameter.Cl_max_to))
+    Math.sqrt((2 * WS) / (parameter.rho0 * parameter.Cl_max_to))
   );
-  const V_to = V_stall_to.map((v) => 1.2 * setVelocity.V);
+  const V_to = V_stall_to.map((v) => 1.2 * props.velocity);
   const PWtakeoff = WS.map(
-    (WS, i) => (1.44 * setWS.WS * V_to[i] * (745.7 / 550)) / (32.17 * setparameter.rho0 * setparameter.Cl_max_to * setparameter.S_to)
+    (WS, i) => (1.44 * setWS.WS * V_to[i] * (745.7 / 550)) / (32.17 * parameter.rho0 * parameter.Cl_max_to * parameter.S_to)
   );
 
-  const Va = Math.sqrt(setparameter.S_L / (0.3 * 0.6));
+  const Va = Math.sqrt(parameter.S_L / (0.3 * 0.6));
   const V_STALLL = (Va * 1.68781) / 1.3;
-  const WS_LDSL = (V_STALLL**2 * setparameter.rho0 * setparameter.Cl_max_l) / 2;
+  const WS_LDSL = (V_STALLL**2 * parameter.rho0 * parameter.Cl_max_l) / 2;
 
-  const CL_ROC = WS.map((ws) => setWS.WS / (0.5 * rho_cruise * setVelocity.V ** 2));
-  const LD_ROC = CL_ROC.map((cl) => cl / (setparameter.cd_clean + K * cl  **2));
-  const PW_roc = LD_ROC.map((ld) => setparameter.roc + (setVelocity.V / ld));
+  const CL_ROC = WS.map((ws) => ws / (0.5 * rho_cruise * props.velocity ** 2));
+  const LD_ROC = CL_ROC.map((cl) => cl / (parameter.cd_clean + K * cl  **2));
+  const PW_roc = LD_ROC.map((ld) => parameter.roc + (props.velocity / ld));
 
   const B_Angle = 30; //deg
   const n = 1 / Math.cos((B_Angle * Math.PI) / 180);
   const PW_turn = WS.map(
     (ws) =>
-      ((0.5 * rho_cruise * V**2 * setparameter.cd_clean) / setWS.WS +
-        K * ((n**2 * setWS.WS) / (0.5 * rho_cruise * setVelocity.V**2))) *
-      (setVelocity.V * 745.7) / 550
+      ((0.5 * rho_cruise * props.velocity**2 * parameter.cd_clean) / ws +
+        K * ((n**2 * ws) / (0.5 * rho_cruise * props.velocity**2))) *
+      (props.velocity * 745.7) / 550
   );
 
 const PW_Cruise = WS.map(
     (ws) =>
-      ((0.5 * rho_cruise * V**2 * setparameter.cd_clean) / setWS.WS +
-        (K * setWS.WS) / (0.5 * rho_cruise * V**2)) *
-      (V * 745.7) / 550
+      ((0.5 * rho_cruise * props.velocity**2 * parameter.cd_clean) / ws +
+        (K * ws) / (0.5 * rho_cruise * props.velocity**2)) *
+      (props.velocity * 745.7) / 550
   );
-
-console.log(WS_LDSL)
 
 const WS_LDSL_array = WS.map(
   (WS) => WS_LDSL
 )
 
 function handleChange(value, key) {
-  setparameter(prevState => ({
+  setParameter(prevState => ({
     ...prevState,
     [key]: value
   }))
@@ -116,7 +120,7 @@ function handleChange(value, key) {
             fill: 'tozeroy',
           },
         ]}
-        layout={ {width: '100%', height: '100%', title: 'Fancy Plot'} }
+        layout={ {width: '100%', height: '100%', title: 'Constraint Diagram'} }
       />
       </header>
     </div>
