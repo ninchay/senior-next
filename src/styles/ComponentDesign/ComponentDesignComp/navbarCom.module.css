@@ -1,6 +1,6 @@
 .Component__Navbar {
     display: flex;
-    height: 93px;
+    height: 59px;
     background: var(--color-bar);
     align-items: center;
 }
