@@ -13,6 +13,7 @@
     "eslint-config-next": "13.2.3",
     "next": "^13.2.3",
     "plotly.js": "^2.18.2",
+    "plotly.js-dist": "^2.18.2",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
