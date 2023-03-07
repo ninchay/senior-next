@@ -1,10 +1,10 @@
-.Component__Tail-Container {
+.Component__Tail_Container {
     background: var(--color-bg);
     display: flex;
     flex-direction: column;
 }
 
-.Component__Tail-Header {
+.Component__Tail_Header {
     display: flex;
     justify-content: center;
     margin: 49px 5%;
@@ -12,42 +12,42 @@
     border-bottom: 2px solid black;
 }
 
-.Component__Tail-Header p {
+.Component__Tail_Header p {
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 64px;
     line-height: 78px;
 }
 
-.Component__Theme-Top img, .Component__Theme-Buttom img {
+.Component__Theme_Top img, .Component__Theme_Buttom img {
     width: 100%;
 }
 
-.Component__Theme-Top, .Component__Theme-Buttom {
+.Component__Theme_Top, .Component__Theme_Buttom {
     display: flex;
 }
-.Component__Tail-Calculation {
+.Component__Tail_Calculation {
     display: flex;
     gap: 10%;
     margin: 0 3%;
 }
 
-.Horizontal__Tail-Calculation {
+.Horizontal__Tail_Calculation {
     flex: 1 1;
 }
 
-.Vertical__Tail-Calculation {
+.Vertical__Tail_Calculation {
     flex: 1 1;
 }
 
-.Component__Tail-Graph {
+.Component__Tail_Graph {
     display: flex;
     justify-content: center;
     margin: 75px 0;
     height: 500px;
 }
 
-.Component__Tail-Graph p {
+.Component__Tail_Graph p {
     width: 40%;
     text-align: center;
     background: #FFFFFF;
@@ -55,7 +55,7 @@
     border-radius: 20px;
 }
 
-.Tail__Result-Header h2{
+.Tail__Result_Header h2{
     font-family: var(--font-family3);
     font-weight: 700;
     font-size: 48px;
@@ -65,41 +65,41 @@
     margin-left: 3%;
 }
 
-.Component__Tail-Result {
+.Component__Tail_Result {
     margin: 0 5%;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
 }
-.Tail__Result-Style {
+.Tail__Result_Style {
     display: flex;
     justify-content: space-around;
     margin: 0 5%;
 }
 
-.Result__Style-First,.Result__Style-Second,.Result__Style-Third {
+.Result__Style_First,.Result__Style_Second,.Result__Style_Third {
     display: flex;
     flex-direction: column;
 }
 
-.Result__Style-First ,.Result__Style-Second ,.Result__Style-Third h3{
+.Result__Style_First ,.Result__Style_Second ,.Result__Style_Third h3{
     text-align: center;
 }
 
-.Result__Style-First output,.Result__Style-Second output,.Result__Style-Third output {
+.Result__Style_First output,.Result__Style_Second output,.Result__Style_Third output {
     height: 60px;
     width: 70%;
     max-width: 300px;
 }
 
-.Result__Style-First .Result__Container-Output {
+.Result__Style_First .Result__Container_Output {
     justify-content: center;
 }
 
-.Result__Style-Second .Result__Container-Output {
+.Result__Style_Second .Result__Container_Output {
     justify-content: center;
 }
 
-.Result__Style-Third .Result__Container-Output {
+.Result__Style_Third .Result__Container_Output {
     justify-content: center;
 }

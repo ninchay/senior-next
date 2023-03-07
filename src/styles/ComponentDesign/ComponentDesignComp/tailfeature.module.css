@@ -30,6 +30,7 @@
     align-items: center;
     width: 100%;
     justify-content: space-between;
+    gap: 5%;
 }
 
 .Tail__Feature_Input {

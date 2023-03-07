@@ -16,7 +16,7 @@ const TailFeature = ({header, title1, title2}) => {
                 <p>Unit</p>
               </div>
                 <h3>{title2}</h3>
-              <div className={styles.Tail__Input-2}>
+              <div className={styles.Tail__Input_2}>
                 <input type="text" placeholder="Input Value"/>
                 <p>Unit</p>
               </div>
