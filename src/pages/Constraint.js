@@ -5,6 +5,7 @@ import React, {useState,useEffect} from 'react'
 const Constraint = () => {
 
   const [velocity, setVelocity] = useState(150)
+  const [h, setAltitude] = useState(150)
   const [takeoffrwlength, settakeoffrwlength] = useState(150)
 
 
@@ -16,7 +17,7 @@ const Constraint = () => {
       </div>
       <div style={{minWidth:'100%',display:'flex', flexDirection:'column', justifyContent:'center', alignItems: 'center'}}>
           <Header_Cons />
-          <Input_Cons handleVelocityChange={(v)=>{setVelocity(v)}}/>
+          <Input_Cons handleVelocityChange={(velocity)=>{setVelocity(velocity)}} />
           <Graph_Cons velocity={velocity}/>
           <Result_Cons />
       </div>

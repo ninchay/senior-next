@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import Plot from 'react-plotly.js';
-import '../../styles/Constraint/Graph_Cons.module.css'
-import './Input_Cons'
 
 function Graph_Cons(props) {
   //assign the variable
@@ -22,9 +20,8 @@ function Graph_Cons(props) {
     P: "101.325", //kN/m^2
   })
   // solve for density
-  const T= parameter.T_SL - 1.98*(props.h/1000)
-  const P = 101.325 //kN/m^2
-  const rho_cruise=P/(parameter.R*T)
+  const T= parameter.T_SL - 1.98*(props.altitude/1000) ;
+  const rho_cruise= parameter.P/(parameter.R*T);
   //start constraint equation
   const K = 1 / (Math.PI * parameter.e * parameter.AR);
   const V_stall_to = WS.map((WS) =>
@@ -39,25 +36,19 @@ function Graph_Cons(props) {
   const V_STALLL = (Va * 1.68781) / 1.3;
   const WS_LDSL = (V_STALLL**2 * parameter.rho0 * parameter.Cl_max_l) / 2;
 
-  const CL_ROC = WS.map((ws) => ws / (0.5 * rho_cruise * props.velocity ** 2));
+  const CL_ROC = WS.map((WS) => WS / (0.5 * rho_cruise * props.velocity ** 2));
   const LD_ROC = CL_ROC.map((cl) => cl / (parameter.cd_clean + K * cl  **2));
   const PW_roc = LD_ROC.map((ld) => parameter.roc + (props.velocity / ld));
 
   const B_Angle = 30; //deg
   const n = 1 / Math.cos((B_Angle * Math.PI) / 180);
   const PW_turn = WS.map(
-    (ws) =>
-      ((0.5 * rho_cruise * props.velocity**2 * parameter.cd_clean) / ws +
-        K * ((n**2 * ws) / (0.5 * rho_cruise * props.velocity**2))) *
-      (props.velocity * 745.7) / 550
-  );
+    (WS) =>
+      ((0.5 * rho_cruise * props.velocity**2 * parameter.cd_clean) / WS + K * ((n**2 * WS) / (0.5 * rho_cruise * props.velocity**2))) * (props.velocity * 745.7) / 550);
 
 const PW_Cruise = WS.map(
-    (ws) =>
-      ((0.5 * rho_cruise * props.velocity**2 * parameter.cd_clean) / ws +
-        (K * ws) / (0.5 * rho_cruise * props.velocity**2)) *
-      (props.velocity * 745.7) / 550
-  );
+    (WS) =>
+      ((0.5 * rho_cruise * props.velocity**2 * parameter.cd_clean) / WS +(K * WS) / (0.5 * rho_cruise * props.velocity**2)) *(props.velocity * 745.7) / 550);
 
 const WS_LDSL_array = WS.map(
   (WS) => WS_LDSL
@@ -68,14 +59,13 @@ function handleChange(value, key) {
     ...prevState,
     [key]: value
   }))
-  console.log(parameter)
 }
 
   return (
     <div className="Graph">
-      <header className="Graph-header">
-        <input min={0} max={10} type={"number"} onChange={(e) => {handleChange(e.target.value,"velocity")}}></input>
-        <input type={"number"} onChange={(e) => {handleChange(e.target.value,"cl")}}></input>
+    {/* //   <header className="Graph-header">
+    //     <input min={0} max={10} type={"number"} onChange={(e) => {handleChange(e.target.value,"velocity")}}></input>
+    //     <input type={"number"} onChange={(e) => {handleChange(e.target.value,"cl")}}></input> */}
       <Plot
         data={[
           {
@@ -122,7 +112,6 @@ function handleChange(value, key) {
         ]}
         layout={ {width: '100%', height: '100%', title: 'Constraint Diagram'} }
       />
-      </header>
     </div>
   )
 }

@@ -27,9 +27,9 @@ return (
                 </div>
                 <div className={styles.inputSection}>
                     <input 
-                      className={styles.des_vel}
+                      className={styles.velocity}
                       type="number"
-                      onChange={(e)=>{props.handleVelocityChange(e.target.value)}}
+                      onChange={(e)=>{props.handleVelocityChange(e.target.value,"velocity")}}
                     />
                     <p className={styles.inputUnit}> Unit </p>
                 </div>
@@ -48,6 +48,7 @@ return (
                     <input 
                       className={styles.inputValue}
                       type="number"
+                      onChange={(e)=>{props.handleAltitudeChange(e.target.value)}}
                     />
                     <p className={styles.inputUnit}> Unit </p>
                 </div>
