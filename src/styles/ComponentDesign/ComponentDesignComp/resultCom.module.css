@@ -13,13 +13,22 @@
     margin: 16px 0;
     margin-bottom: 46px;
     align-items: center;
+    justify-content: center;
     
 }
-.Result__Container_Output output {
+.Result__Container_Output p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 7%;
     width: 100%;
     max-width: 113px;
-    height: 25px;
+    height: 40px;
     background: var(--color-output);
     border-radius: 9px;
-} 
+    overflow: hidden;
+    font-family: var(--font-family3);
+}
+.Result__Container_Output span {
+    font-family: var(--font-family2);
+}

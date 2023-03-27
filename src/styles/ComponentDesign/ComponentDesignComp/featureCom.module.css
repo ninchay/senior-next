@@ -15,4 +15,10 @@
     margin-right: 7%;
     width: 60%;
     height: 25px;
-} 
+    background-color: var(--color-input);
+    border-radius: 6px;
+    font-family: var(--font-family2);
+}
+.Feature__Container_Input p {
+    font-family: var(--font-family2);
+}
