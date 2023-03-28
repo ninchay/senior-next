@@ -20,8 +20,8 @@ const ContentHome = () => {
         </div>
       </div>
       <div className={styles.Home__content_Theory}>
-        <a href='Theoretical-Background'><p>Theoretical<br/>Background<br/>
-        <img src="/bulb.png" alt='Graph'/></p></a>
+        <Link href="/Theory"><p>Theoretical<br/>Background<br/>
+        <img src="/bulb.png" alt='Graph'/></p></Link>
         <div className={styles.Theory_decor}>
           <img src="/cloud-small.png" alt='Small-Cloud'/>
         </div>

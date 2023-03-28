@@ -9,7 +9,7 @@
 .container {
     display: flex;
     font-size: 8px;
-    flex: 0.8;
+    flex: 0.6;
     justify-content: space-between;
 }
 .sub_container1 {
@@ -34,46 +34,46 @@
 } 
 
 .header1, .header2, .header3 {
-    margin: 10px, 0;
     margin-bottom: 10px;
     text-align: center;
     font-size: large;
 }
 
-.input_value1, .input1_2_value, .input2_value, .input2_1_value {
+/* .input1_value, .input1_2_value, .input2_value, .input2_1_value {
     border-radius: 6px;
     width: 100%;
-} 
-
+}  */
+.overall_weight, .velocity, .altitude, .torw, .roc ,.BAngle
+{
+    height:25px;
+    width: 40%;
+}
 /* starts sub container 1 */
-    .input_container1 {
-        /* text-align: left; */
-        padding: 5px, 0;
-        text-align: left;
-    }
 
     /* .input1, .input1_2{
         margin-top: 4%;
         
     } */
     
-    .inputSection {
+.inputSection {
         display: flex;
-        margin: 5px;
+        flex-direction: row;
+        text-align: center;
+        
     }
 
-    .inputTile {
-        margin-top: 4%;
+    .inputTitle {
+        margin:0%;
     }
 
-    .inputValue {
+    /* .inputValue {
         width: 100%;
-        margin-right: 10px;
-        flex: 0.5;
+        margin-left: 10px;
         background-color: #E9E9E9;
         border: none;
-    }
+    } */
 
-    .inputUnit {
-        flex: 0.5;
-    }
+.inputUnit {
+    flex: 0.5;
+    margin-top: 2%;
+    } 

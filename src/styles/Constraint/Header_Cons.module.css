@@ -2,10 +2,10 @@
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 64px;
-    line-height: 78px;
+    line-height: 0px;
     display: flex;
-    width: 90%;
     justify-content: center;
     border-bottom: 2px solid black;
-    margin: 20px 5%;
+    width: 90%;
+    margin-inline: auto
 }

@@ -16,8 +16,9 @@ return (
                 </div>
                 <div className={styles.inputSection}>
                   <input 
-                    className={styles.input1_value}
+                    className={styles.overall_weight}
                     type="number"
+                    onChange={(e)=>{props.handleWeightChange(e.target.value,"overall_weight")}}
                   />
                   <p className={styles.inputUnit}> Unit </p>
                 </div>
@@ -28,7 +29,8 @@ return (
                 <div className={styles.inputSection}>
                     <input 
                       className={styles.velocity}
-                      type="number"
+                      type="error"
+
                       onChange={(e)=>{props.handleVelocityChange(e.target.value,"velocity")}}
                     />
                     <p className={styles.inputUnit}> Unit </p>
@@ -43,23 +45,22 @@ return (
             </div>
               <div className={styles.inputTitle}>
                   Cruising Altitude
-                <p><input type="value" className={styles.input2_value}/></p> 
                 <div className={styles.inputSection}>
                     <input 
-                      className={styles.inputValue}
+                      className={styles.altitude}
                       type="number"
-                      onChange={(e)=>{props.handleAltitudeChange(e.target.value)}}
+                      onChange={(e)=>{props.handleAltitudeChange(e.target.value,"altitude")}}
                     />
                     <p className={styles.inputUnit}> Unit </p>
                 </div>
               </div>
               <div className={styles.inputTitle}>
                 <p>Takeoff Runway Length</p>
-                  <p><input type="value" className={styles.input2_1_value}/></p> 
                 <div className={styles.inputSection}>
                     <input 
-                      className={styles.inputValue}
+                      className={styles.torw}
                       type="number"
+                      onChange={(e)=>{props.handleTORWChange(e.target.value,"torw")}}
                     />
                     <p className={styles.inputUnit}> Unit </p>
                 </div>
@@ -75,19 +76,20 @@ return (
                   Rate of Climb
                 <div className={styles.inputSection}>
                     <input 
-                      className={styles.inputValue}
+                      className={styles.roc}
                       type="number"
+                      onChange={(e)=>{props.handleROCChange(e.target.value,"roc")}}
                     />
-                    <p className={styles.inputUni}> Unit </p>
+                    <p className={styles.inputUnit}> Unit </p>
                 </div>
               </div>
               <div className={styles.inputTitle}>
                   Bank Angle
-                {/* <p><input type="value" className="input2-value"/></p> */}
                 <div className={styles.inputSection}>
                     <input 
-                      className={styles.inputValue}
+                      className={styles.BAngle}
                       type="number"
+                      onChange={(e)=>{props.handleBAngleChange(e.target.value,"BAngle")}}
                     />
                     <p className={styles.inputUnit}> Unit </p>
                 </div>

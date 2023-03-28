@@ -7,7 +7,7 @@ const Menu = () => (
   <>
   <p><Link href="/">Home</Link></p>
   <p><Link href="/ComponentDesign_link">Component Design</Link></p>
-  <p><a href="#Background">Theoretical Background</a></p>
+  <p><Link href="/Theory">Theoretical Background</Link></p>
   </>
 )
 const Navbar_Cons = () => {

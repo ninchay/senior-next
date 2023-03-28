@@ -1,0 +1,48 @@
+
+.Theory_Navbar {
+  background-color: var(--color-bar);
+  height: 2.5rem;
+  width: 100%;
+  padding: 10px ;
+}
+
+.Navbar__Menu_Container {
+  margin-top: 5px;
+  background-color:white;
+  border-style: groove;
+  display: flex;
+  position: absolute;
+  padding: 10px;
+  text-align: start;
+  border-radius: 10px;
+  -webkit-animation: Navbar__Menu_Container 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: Navbar__Menu_Container 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.Navbar__Menu_Container p {
+  font-family: var(--font-family2);
+  margin: 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@-webkit-keyframes Navbar__Menu_Container {
+  0% {
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes Navbar__Menu_Container {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}

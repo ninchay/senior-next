@@ -4,10 +4,12 @@ import React, {useState,useEffect} from 'react'
 
 const Constraint = () => {
 
-  const [velocity, setVelocity] = useState(150)
-  const [h, setAltitude] = useState(150)
-  const [takeoffrwlength, settakeoffrwlength] = useState(150)
-
+  const [velocity, setVelocity] = useState(70)
+  const [altitude, setAltitude] = useState(1000)
+  const [roc, setROC] = useState(12)
+  const [torw, setTORW] = useState(65.6)
+  const [BAngle, setBAngle] = useState(60)
+  const [intersection, setIntersection] = useState(null);
 
   return (
   <>
@@ -16,9 +18,25 @@ const Constraint = () => {
         <Navbar_Cons />
       </div>
       <div style={{minWidth:'100%',display:'flex', flexDirection:'column', justifyContent:'center', alignItems: 'center'}}>
-          <Header_Cons />
-          <Input_Cons handleVelocityChange={(velocity)=>{setVelocity(velocity)}} />
-          <Graph_Cons velocity={velocity}/>
+          <Header_Cons header_title="Constraint Diagram"/>
+          <Input_Cons handleVelocityChange={(velocity)=>{
+                        setVelocity(velocity)}}
+                      handleAltitudeChange={(altitude)=>{
+                        setAltitude(altitude)}}
+                      handleROCChange={(roc)=>{
+                        setROC(roc)}}
+                      handleTORWChange={(torw)=>{
+                        setTORW(torw)}}
+                      handleBAngleChange={(BAngle)=>{
+                        setBAngle(BAngle)}}            
+                        
+          />
+          <Graph_Cons velocity={velocity} 
+                      altitude={altitude}
+                      roc={roc}
+                      torw={torw}
+                      BAngle={BAngle}
+                      />
           <Result_Cons />
       </div>
     </div>
