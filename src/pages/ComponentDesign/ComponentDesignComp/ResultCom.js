@@ -1,14 +1,14 @@
 import styles from '../../../styles/ComponentDesign/ComponentDesignComp/resultCom.module.css'
 
-const ResultCom = ({title, output}) => {
+const ResultCom = (props) => {
   return (
     <div className={styles.Component__Result_Container}>
          <div className={styles.Result__Container_title}>
-            <h3>{title}</h3>
+            <h3>{props.title}</h3>
         </div>
         <div className={styles.Result__Container_Output}>
-            <output name="Result" placeholder={output}/>
-            <p>Unit</p>
+            <p>{props.output}</p>
+            <span>{props.unit}</span>
         </div>
     </div>
   )
