@@ -48,8 +48,8 @@ const Content_theo = () => {
 
             <div className={styles.takeoff_box}>
               <>
-              <div styles={{display:"flex",flexDirection:"colume"}}>
-                <div>Takeoff</div> <div>A</div> <div>B</div>
+              <div styles={{display:"flex", flexDirection:"colume"}}>
+                <div>Takeoff</div> 
                 <div className={[styles.toggle1, {flex:1}]}>
                     { selected ? <HiMinus color="#000" size={35} onClick={() => setSelected(false)}/>
                                 : <HiPlus color="#000" size={35} onClick={() => setSelected(true)}/>
