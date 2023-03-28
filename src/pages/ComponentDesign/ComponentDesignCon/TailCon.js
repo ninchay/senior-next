@@ -1,7 +1,9 @@
 import { ResultCom, TailFeature } from '../../ComponentDesign/ComponentDesignComp'
 import styles from '../../../styles/ComponentDesign/ComponentDesignCon/tailCon.module.css'
+import { useState } from 'react'
 
 const TailCon = () => {
+
   return (
     <div className={styles.Component__Tail_Container}>
       <div className={styles.Component__Theme_Top}>
@@ -13,11 +15,11 @@ const TailCon = () => {
       <div className={styles.Component__Tail_Calculation}>
         <div className={styles.Horizontal__Tail_Calculation}>
           <TailFeature header="Horizontal Tail" title1="Tail Moment Arm"
-          title2="Horizontal Tail Span" />
+          title2="Horizontal Tail Span"/>
         </div>
         <div className={styles.Vertical__Tail_Calculation}>
           <TailFeature header="Vertical Tail" title1="Tail Moment Arm"
-          title2="Vertical Tail Span" />
+          title2="Vertical Tail Span"/>
         </div>
       </div>
       <div className={styles.Component__Tail_Graph}>

@@ -109,7 +109,7 @@ const WingCon = () => {
               setAirfoil(e.target.value);
             }}
           >
-            <option value="" disabled selected>
+            <option value="" disabled>
               --Select Airfoil--
             </option>
             <option value="ClarkY">Clark-Y</option>

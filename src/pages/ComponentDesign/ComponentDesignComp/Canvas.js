@@ -11,7 +11,7 @@ const Canvas = (props) => {
   const newPosX = 317.2 - wingSpanM_Pos;
   const newPosY = 263.32 - chordM_Pos;
   const Mac_chordM = wingSpanM / aspectRatio;
-  const rootM = (2 * Mac_chordM) / (1 + Number(props.taper));
+  const rootM = (1.5 * Mac_chordM) * ((1 + Number(props.taper))/(1+Number(props.taper)+Number(props.taper**2)));
   const tipM = rootM * (props.taper);
   // console.log(taper)
 
