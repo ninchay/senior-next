@@ -1,4 +1,4 @@
-import { Navbar_theo, Content_theo, AboutRC, BasicPrinciple } from './TheoryBg'
+import { Navbar_theo, Content_theo, AboutRC, BasicPrinciple,Aerodynamics } from './TheoryBg'
 import styles from '../styles/TheoryBg/Theory.module.css'
 
 const Theory = () => {
@@ -57,6 +57,7 @@ const variableListCruise = [
     <Navbar_theo />
     <AboutRC />
     <BasicPrinciple />
+    <Aerodynamics />
     <div className={styles.title_Constraint}><p>Constraint Diagram</p></div>
     <Content_theo title="Takeoff"
       subtitle="The originate equation is from (AIAA Book) eq. 5.56"
