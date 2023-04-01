@@ -13,7 +13,7 @@ const Constraint = () => {
 
   return (
   <>
-    <div classname={styles.app}>
+    <div className={styles.app}>
       <div className={styles.Navbar}>
         <Navbar_Cons />
       </div>
