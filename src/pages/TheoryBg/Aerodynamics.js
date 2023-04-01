@@ -4,7 +4,7 @@ import styles from '../../styles/TheoryBg/Aerodynamics.module.css'
 const Aerodynamics = () => {
   return (
 <>
-<div className={styles.title}><p>How do Aircraft Fly?</p></div>
+<div className={styles.title}><p>How do Aircrafts Fly?</p></div>
     <div className={styles.textbox}>
         <div className={styles.describtion}> 
         <p>Aerodynamics is the study of how air moves around objects, and it plays a critical role in aircraft design. The basic principle of aerodynamics is that air exerts a force on any object that moves through it. This force is called aerodynamic force and it has two components: lift and drag. <p/>
