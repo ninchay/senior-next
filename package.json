@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "equation-resolver": "^1.0.0",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.3",
     "next": "^13.2.3",
@@ -16,6 +17,7 @@
     "plotly.js-dist": "^2.18.2",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
+    "react-equation": "^1.0.0",
     "react-icons": "^4.7.1",
     "react-plotly.js": "^2.6.0"
   }

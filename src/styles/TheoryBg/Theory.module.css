@@ -5,3 +5,10 @@
     scroll-behavior: smooth;
     background-color: var(--color-bg);
 }
+
+.title_Constraint {
+    font-family: var(--font-family);
+    font-size: 30px;
+    margin-inline: 10%;
+    margin-block-start: 1em;
+}
