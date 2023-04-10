@@ -14,11 +14,13 @@ const Navbar_Cons = () => {
   const[ToggleMenu, setToggleMenu] = useState(false);
   return (
     <div className={styles.Constraint_Navbar}>
-      <div className={styles.Constraint_Navbar_Menu}>
-        {ToggleMenu
-          ? <RiCloseLine  color="#000" size={35} margin-left={10} onClick={() => setToggleMenu(false)} />
-          : <RiMenu2Line color="#000" size={35} onClick={() => setToggleMenu(true)} />
-        }
+      <div className={styles.toggle}>
+        <div className={styles.Constraint_Navbar_Menu}>
+          {ToggleMenu
+            ? <RiCloseLine  color="#000" size={35} margin-left={10} onClick={() => setToggleMenu(false)} />
+            : <RiMenu2Line color="#000" size={35} onClick={() => setToggleMenu(true)} />
+          }
+        </div>
         {ToggleMenu && (
           <div className={styles.Navbar__Menu_Container}>
             <div className={styles.Menu__Container_Link}>
@@ -30,16 +32,4 @@ const Navbar_Cons = () => {
     </div>
       )
     }   
-{/*       
-    </div>
-  <>
-  <div className={styles.header}>  
-      <div className={styles.burger}>
-      </div>
-  </div>
-
-  <div className={styles.top_page}>
-        Constraint Diagram
-  </div>
-  </> */}
 export default Navbar_Cons

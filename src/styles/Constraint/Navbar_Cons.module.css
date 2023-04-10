@@ -1,14 +1,22 @@
-.Constraint__Navbar_Menu svg {
-    cursor: pointer;
+.Constraint__Navbar_Menu {
+  cursor: pointer;
+  background-color: white;
+  display: flex;
 }
 
+.toggle {
+  margin-left: 1rem;
+}
+.Constraint_Navabr {
+  display: flex;
+}
 
 .Navbar__Menu_Container {
     display: flex;
-    position: absolute;
+    width: max-content;
     padding: 10px;
     text-align: start;
-    background: var(--color-bg) ;
+    background: white;
     border-radius: 10px;
     -webkit-animation: Navbar__Menu_Container 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     animation: Navbar__Menu_Container 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;

@@ -1,6 +1,8 @@
 import styles from "../../styles/Constraint/Input_Cons.module.css";
 
 const Input_Cons = (props) => {
+
+  
   return (
     <div className={styles.card}>
       <div className={styles.container}>

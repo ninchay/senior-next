@@ -1,32 +1,60 @@
+import { useState } from 'react';
 import styles from '../../styles/Constraint/Result_Cons.module.css';
 
-const Result_Cons = () => {
+const Result_Cons = (props) => {
+    const powerReq1 = props.pwValue*(props.weight*2.20462)
+    const wingArea1 = ((props.weight*2.20462)/props.wSValue)*0.092903
+    const clCruise1 = (2/Number(props.rhoCruise * props.velocity**2)) *Number(props.wSValue)
+//round number 
+const powerReq = powerReq1.toFixed(3)
+const wingArea = wingArea1.toFixed(3)
+const clCruise = clCruise1.toFixed(3)
+
 return (
 <div className={styles.result_summary}>
 
     <div className={styles.header_result}>
         <b>Result Summary</b>
     </div>
-    
+
     <div className={styles.container_result}>
-        <div className={styles.sub_header}>
-            <span className={styles.word}>P/W</span>
-            <span className={styles.word}>W/S</span>
+
+        <div className={styles.pwResult}>
+            <span className={styles.word}>Power to Weight</span>
+            <div className={styles.power_weight}>
+                {props.pwValue}
+            </div>
+        </div>
+
+        <div className={styles.wsResult}>
+            <span className={styles.word}>Wing Loading </span>
+            <div className={styles.wingLoading}>
+                {props.wSValue}
+            </div>
+        </div>
+
+        <div className={styles.powerReqResult}>
             <span className={styles.word}>Power Required</span>
+            <div className={styles.powerReq}>
+                {powerReq}
+            </div>
+        </div>
+
+        <div className={styles.wingAreaResult}>
             <span className={styles.word}>Wing Area</span>
+            <div className={styles.wingArea}>
+                {wingArea}
+            </div>
+        </div>
+
+        <div className={styles.clCruiseaResult}>
             <span className={styles.word}>CL for Cruise</span>
+            <div className={styles.clCruise}>
+                {clCruise}
+            </div>
         </div>
-
-        <div className={styles.result_box}>
-            <input type="number" className={styles.power_weight} />
-            <input type="number" className={styles.wing_loading} />
-            <input type="number" className={styles.power_req} />
-            <input type="number" className={styles.wingarea} />
-            <input type="number" className={styles.clcruise} />
-        </div>
-
     </div>
-    </div>
+</div>
 
 )
 }

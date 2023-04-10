@@ -1,15 +1,30 @@
 import { Input_Cons, Navbar_Cons, Result_Cons,Graph_Cons, Header_Cons} from './ConstraintDiagram';
+import { FooterHome } from './HomePage/HomePageCon';
 import styles from '../styles/Constraint/Constraint.module.css'
 import React, {useState,useEffect} from 'react'
 
 const Constraint = () => {
 
-  const [velocity, setVelocity] = useState(70)
-  const [altitude, setAltitude] = useState(1000)
-  const [roc, setROC] = useState(12)
-  const [torw, setTORW] = useState(65.6)
-  const [BAngle, setBAngle] = useState(60)
-  const [intersection, setIntersection] = useState(null);
+  const [weight, setWeight] = useState("")
+  const [velocity, setVelocity] = useState("")
+  const [altitude, setAltitude] = useState("")
+  const [roc, setROC] = useState("")
+  const [torw, setTORW] = useState("")
+  const [BAngle, setBAngle] = useState("")
+  const [pwValue, setPwValue]=useState("")
+  const [wSValue, setWsValue] = useState("")
+  const [rhoCruise, setRhoCruise] = useState("")
+
+
+  const handlePWChange = (PW) => {
+    setPwValue(PW);
+  }
+  const handleWSChange = (WS) => {
+    setWsValue(WS);
+  }
+  const handleRhoCruiseChange = (rhoCruise) => {
+    setRhoCruise(rhoCruise);
+  }
 
   return (
   <>
@@ -19,7 +34,10 @@ const Constraint = () => {
       </div>
       <div style={{minWidth:'100%',display:'flex', flexDirection:'column', justifyContent:'center', alignItems: 'center'}}>
           <Header_Cons header_title="Constraint Diagram"/>
-          <Input_Cons handleVelocityChange={(velocity)=>{
+          <Input_Cons 
+                      handleWeightChange={(weight)=>{
+                        setWeight(weight)}}
+                      handleVelocityChange={(velocity)=>{
                         setVelocity(velocity)}}
                       handleAltitudeChange={(altitude)=>{
                         setAltitude(altitude)}}
@@ -36,8 +54,22 @@ const Constraint = () => {
                       roc={roc}
                       torw={torw}
                       BAngle={BAngle}
+                      pwValue={pwValue}
+                      handlePWChange={handlePWChange}
+
+                      handleWSChange={handleWSChange}
+                      wSValue = {wSValue}
+                      
+                      onRhoCruiseChange={handleRhoCruiseChange}
+                      rhoCruise={rhoCruise}
                       />
-          <Result_Cons />
+          <Result_Cons pwValue={pwValue}
+                        wSValue = {wSValue}
+                        weight={weight}
+                        velocity={velocity} 
+                        rhoCruise={rhoCruise}
+          />
+          <FooterHome />
       </div>
     </div>
   </>

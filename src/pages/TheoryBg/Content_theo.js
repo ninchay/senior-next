@@ -39,15 +39,6 @@ const Content_theo = ({title, subtitle,body, equation, equationFinal, variableLi
                 <br />
                 {variableList.map((item)=>{return(renderEquation(item.symbol, item.description))})}         
                 <br />
-            {/* <div style={{marginLeft:'5rem'}}>{body.split("\r\n").map((item)=> {return 
-                <>{item} <br/></>})} */}
-
-            {/* </div> */}
-
-            {/* {lines.map((line, index) => (
-            <p key={index}>{line}</p>
-            ))} */}
-                <br />
                 <div>{body}</div>
                 <br />
                   <div style={{display:"flex", flexDirection:"column", justifyItems:"center",alignItems:"center"}}>

@@ -1,4 +1,4 @@
-import { Navbar_theo, Content_theo, AboutRC, BasicPrinciple,Aerodynamics } from './TheoryBg'
+import { Navbar_theo, Content_theo, AboutRC, BasicPrinciple,Aerodynamics, Component } from './TheoryBg'
 import styles from '../styles/TheoryBg/Theory.module.css'
 
 const Theory = () => {
@@ -109,6 +109,8 @@ const variableListCruise = [
       body1= {`\nRearranging the equation and converting the thrust to power, the eqation of power-to-weight is obtained which can be used for RC aircraft as follow\n`}
       equationFinal="(P_TO/W_TO)= ((C_d0q)/(W/S) + n^2(K/q)(W/S))*V*(745.7/550)"
     />
+
+    <Component />
   </div>
 </>  
   )
