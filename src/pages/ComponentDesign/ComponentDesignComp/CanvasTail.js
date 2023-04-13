@@ -6,7 +6,7 @@ const CanvasTail = (props) => {
 
   //Global Tail Area Parameters
   const momentArm = props.tailArm * 0.01;
-  const wingArea = 0.54;
+  const wingArea = props.wingArea;
   //Canvas
   const tailSpanM = props.tailSpan * 4;
   const tailSpanMPos = 0.5 * tailSpanM;

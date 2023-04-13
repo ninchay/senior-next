@@ -43,6 +43,7 @@ const TailCon = (props) => {
             header="Horizontal Tail"
             title1="Tail Moment Arm"
             title2="Horizontal Tail Span"
+            wingArea = {props.wingArea}
             tailType="Horizontal"
             tailArm = {props.tailArm}
             onTailArmChange = {props.onTailArmChange}
@@ -57,6 +58,7 @@ const TailCon = (props) => {
             header="Vertical Tail"
             title1="Tail Moment Arm"
             title2="Vertical Tail Span"
+            wingArea = {props.wingArea}
             tailType="Vertical"
             tailArm = {vTailArm}
             onTailArmChange = {(arm) => setVtailArm(arm)}

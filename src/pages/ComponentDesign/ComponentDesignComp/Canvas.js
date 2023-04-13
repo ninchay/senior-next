@@ -4,7 +4,7 @@ const Canvas = (props) => {
   // function used
   const { canvasPropsChange } = props;
   //Parameters
-  const aspectRatio = 6;
+  const aspectRatio = (props.wingSpan/props.wingArea);
   const wingSpanM = props.wingSpan * 3;
   const chordM = wingSpanM / aspectRatio;
   const wingSpanM_Pos = 0.5 * wingSpanM;
@@ -81,7 +81,7 @@ const Canvas = (props) => {
       ctx.stroke();
       ctx.lineWidth = 2;
     }
-  }, [props.wingSpan, props.taper, props.wingType]);
+  }, [props.wingSpan, props.taper, props.wingType,props.wingArea]);
 
   return <canvas ref={canvasRef} height={526.64} width={634.4} />;
 };

@@ -28,6 +28,11 @@ const WingCon = (props) => {
           <h2>Wing Parameters</h2>
           <div className={styles.Component__Wing_Style}>
             <div className={styles.Wing__Selection}>
+              <FeatureCom
+                title="Wing Area"
+                unit={<span>cm.<sup>2</sup></span>}
+                onChange={props.onWingAreaChange}
+              />
               <h3>Wing Type</h3>
               <select
                 name="WingType"
@@ -43,7 +48,7 @@ const WingCon = (props) => {
             </div>
             <FeatureCom
               title="Wingspan"
-              InputValue={props.wingSpan}
+              // InputValue={props.wingSpan}
               onChange={props.onWingSpanChange}
               maxInput="180"
               step="10"
@@ -52,7 +57,7 @@ const WingCon = (props) => {
             />
             <FeatureCom
               title="Taper Ratio"
-              InputValue={taper}
+              // InputValue={taper}
               onChange={(T) => {setTaper(T); props.onTaperCanvas(T)}}
               maxInput="1"
               step="0.05"
@@ -65,6 +70,7 @@ const WingCon = (props) => {
           <span className={styles.Geometry__WingSpan}>Wingspan</span>
           <span className={styles.Geometry__Chord}>Chord</span>
           <Canvas
+          wingArea = {props.wingArea}
             wingType={wingType}
             wingSpan={props.wingSpan}
             taper={taper}

@@ -7,11 +7,11 @@ const HeaderCon = () => {
           <p>Component Design</p>
       </div>
       <div className={styles.Component__Header_Unit}>
-        <select name="UnitSelection" defaultValue="">
+        {/* <select name="UnitSelection" defaultValue="">
           <option value="" disabled>--Select Unit--</option>
           <option value="SI">SI</option>
           <option value="Imperial">Imperial</option>
-        </select>
+        </select> */}
       </div>
     </div>
   )

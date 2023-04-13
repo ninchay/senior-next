@@ -67,8 +67,13 @@ const ComponentDesign = () => {
     setHtailSpan(hTailSpan);
   }
 
+  const[wingArea, setWingArea] = useState(null)
 
-  console.log(hTailSpan)
+  const handleWingArea = (A) => {
+    setWingArea(A);
+  }
+
+  console.log(wingArea)
 
   return (
     <div className={styles.App}>
@@ -76,6 +81,8 @@ const ComponentDesign = () => {
         <HeaderCon/>
       <div className="Wing">
         <WingCon
+        wingArea = {wingArea}
+        onWingAreaChange = {handleWingArea}
         wingSpan = {wingSpan}
         onWingSpanChange={handleWingSpanChange}
         canvasProps = {canvasProps}
@@ -87,6 +94,7 @@ const ComponentDesign = () => {
       <div className="Tail">
         <TailCon
         tailArm = {hTailArm}
+        wingArea = {wingArea}
         onTailArmChange ={handleHtailArmChange}
         wingSpan = {wingSpan}
         chordM = {canvasProps.chordM}
