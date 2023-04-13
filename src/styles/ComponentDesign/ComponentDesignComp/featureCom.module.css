@@ -15,7 +15,7 @@
     margin-right: 7%;
     width: 60%;
     height: 25px;
-    background-color: var(--color-input);
+    background-color: var(--color-output);
     border-radius: 6px;
     font-family: var(--font-family2);
 }

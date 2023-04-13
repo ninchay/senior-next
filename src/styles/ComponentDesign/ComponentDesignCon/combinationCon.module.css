@@ -1,0 +1,40 @@
+.CombinationCon_Header{
+    display: flex;
+    justify-content: center;
+    margin: 49px 5%;
+    margin-top: 0;
+    border-bottom: 2px solid black;
+}
+
+.CombinationCon_Header h2 {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 78px;    
+}
+
+.combinationCon_Content {
+    display: flex;
+    margin: 0 3%;
+}
+
+.contentTop, .contentSide {
+    flex: 1 1;
+    margin: 0 2%;
+}
+
+.contentTop h3, .contentSide h3 {
+    font-family: var(--font-family3);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    text-align: center;
+}
+
+.contentTop_Canvas, .contentSide_Canvas {
+    height: 634px;
+    background-color: var(--color-bg);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+
+}

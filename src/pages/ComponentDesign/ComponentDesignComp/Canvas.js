@@ -1,7 +1,8 @@
 import React, { useRef, useEffect } from "react";
 
 const Canvas = (props) => {
-  const {canvasPropsChange} = props
+  // function used
+  const { canvasPropsChange } = props;
   //Parameters
   const aspectRatio = 6;
   const wingSpanM = props.wingSpan * 3;
@@ -11,9 +12,13 @@ const Canvas = (props) => {
   const newPosX = 317.2 - wingSpanM_Pos;
   const newPosY = 263.32 - chordM_Pos;
   const Mac_chordM = wingSpanM / aspectRatio;
-  const rootM = (1.5 * Mac_chordM) * ((1 + Number(props.taper))/(1+Number(props.taper)+Number(props.taper**2)));
-  const tipM = rootM * (props.taper);
-  // console.log(taper)
+  const rootM =
+    1.5 *
+    Mac_chordM *
+    ((1 + Number(props.taper)) /
+      (1 + Number(props.taper) + Number(props.taper ** 2)));
+  const tipM = rootM * props.taper;
+  // console.log(props.wingSpan)
 
   useEffect(() => {
     canvasPropsChange({ chordM, rootM, tipM });
@@ -61,7 +66,7 @@ const Canvas = (props) => {
       ctx.fill();
       ctx.stroke();
       ctx.lineWidth = 1.5;
-
+      
     } else if (props.wingType === "Rectangular") {
       // RectangularWing
 
@@ -80,5 +85,7 @@ const Canvas = (props) => {
 
   return <canvas ref={canvasRef} height={526.64} width={634.4} />;
 };
+
+export const aspectRatio = 6;
 
 export default Canvas;

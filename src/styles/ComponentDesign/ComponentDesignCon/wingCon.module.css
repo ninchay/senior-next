@@ -21,10 +21,30 @@
     display: flex;
     flex: 1 1;
     justify-content: center;
-    background: var(--color-bg);
     margin: 0 5%;
+    position: relative;
+}
+
+.Geometry__WingSpan {
+    position: absolute;
+    bottom: 100%;
+    font-family: var(--font-family2);
+}
+
+.Geometry__Chord {
+    position: absolute;
+    font-family: var(--font-family2);
+    top: 50%;
+    right: 95%;
+    transform: rotate(270deg);
+}
+
+.Component__Wing_Geometry canvas {
+    background: var(--color-bg);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
 }
+
 .Component__Wing_Input h2 {
     font-family: var(--font-family3);
     font-weight: 700;
@@ -51,7 +71,7 @@
     width: 60%;
     height: 25px;
     margin: 16px 0;
-    background-color: var(--color-input);
+    background-color: var(--color-output);
     border-radius: 6px;
     font-family: var(--font-family2);
 }
@@ -103,7 +123,7 @@
     height: 25px;
     width: 70%;
     margin: 16px 0;
-    background-color: var(--color-input);
+    background-color: var(--color-output);
     border-radius: 6px;
     font-family: var(--font-family2);
 }

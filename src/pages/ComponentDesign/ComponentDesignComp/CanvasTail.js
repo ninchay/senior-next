@@ -1,36 +1,78 @@
 import React, { useEffect, useRef } from "react";
 
 const CanvasTail = (props) => {
-    const tailSpanM = props.tailSpan*4;
-    const newPosX = 285-tailSpanM;
-    // const newPosY = 379-tailChordM;
-    // console.log(tailspanM)
-    // Access getContext
-    const canvasTailRef = useRef(null)
-    
-    useEffect(() => {
-        const canvasTail = canvasTailRef.current;
-        const ctx = canvasTail.getContext("2d")
+  //Tail Parameters Callback Function
+  const { onChange } = props;
 
-      // Tail
+  //Global Tail Area Parameters
+  const momentArm = props.tailArm * 0.01;
+  const wingArea = 0.54;
+  //Canvas
+  const tailSpanM = props.tailSpan * 4;
+  const tailSpanMPos = 0.5 * tailSpanM;
+  const newPosY = 379 / 2 - tailSpanMPos;
 
-      // Start a new path
-      ctx.beginPath();
-      // Draw the rectangle with the new dimensions and position
-    //   ctx.rect(newPosX, newPosY, wingSpanM, chordM);
+  //Horizaontal Tail Area Parameters
+  const hCoeff = 0.7;
+  const MAC = (props.MAC * 0.01) / 3;
+  // Area
+  const HtArea = ((hCoeff * MAC * wingArea) / momentArm)
+  //Chord
+  const hTailChord = HtArea / (props.tailSpan * 0.01)
+  //Canvas
+  const hTailChordMPos = 0.5 * hTailChord * 4 * 100;
 
-      //Gemometry Style
-      ctx.fillStyle = "#F6623E";
-      ctx.fill();
-      ctx.stroke();
-      ctx.lineWidth = 2;
-    }, []);
+  //Vertical Tail Area Parameters
+  const vCoeff = 0.04;
+  const span = props.wingSpan * 0.01;
+  // Area
+  const VtArea =((vCoeff * span * wingArea) / momentArm)
+  //Chord
+  const vTailChord = VtArea / (props.tailSpan * 0.01)
+  //Canvas
+  const vTailChordMPos = 0.5 * vTailChord * 4 * 100;
 
+  // console.log(props.tailSpan);
 
+  useEffect(() => {
+    onChange({ HtArea, hTailChord });
+  }, [HtArea, hTailChord]);
 
-  return (
-    <canvas ref={canvasTailRef} height={379} width={285}/>
-  )
-}
+  useEffect(() => {
+    onChange({ VtArea, vTailChord });
+  }, [VtArea, vTailChord]);
 
-export default CanvasTail
+  //Tail Parameters for Canvas
+  const newPosX =
+    props.tailType == "Horizontal"
+      ? 285 / 2 - Number(hTailChordMPos)
+      : 285 / 2 - Number(vTailChordMPos);
+  // // console.log(tailSpanM, tailChordM, newPosX, newPosY)
+  // // Access getContext
+  const canvasTailRef = useRef(null);
+
+  useEffect(() => {
+    const canvasTail = canvasTailRef.current;
+    const ctx = canvasTail.getContext("2d");
+
+    // Start a new path
+    ctx.clearRect(0, 0, canvasTail.width, canvasTail.height);
+    ctx.beginPath();
+    // Draw the rectangle with the new dimensions and position
+    if (props.tailType == "Horizontal") {
+      ctx.rect(newPosX, newPosY, hTailChordMPos * 2, tailSpanM);
+    } else {
+      ctx.rect(newPosX, newPosY, vTailChordMPos * 2, tailSpanM);
+    }
+
+    //Gemometry Style
+    ctx.fillStyle = "#F6623E";
+    ctx.fill();
+    ctx.stroke();
+    ctx.lineWidth = 2;
+  }, [props.tailSpan, props.tailArm]);
+
+  return <canvas ref={canvasTailRef} height={379} width={285} />;
+};
+
+export default CanvasTail;
