@@ -3,7 +3,7 @@ import { ResultCom } from "../ComponentDesignComp";
 import { useEffect, useState, useRef} from "react";
 import styles from "../../../styles/ComponentDesign/ComponentDesignCon/wingCon.module.css";
 
-const WingCon = () => {
+const WingCon = (props) => {
   // const count = useRef(0);
 
   // useEffect(() => {
@@ -12,13 +12,7 @@ const WingCon = () => {
   // console.log(count.current)
   const [wingType, setWingType] = useState("");
   const [airfoil, setAirfoil] = useState("");
-  const [wingSpan, setWingSpan] = useState("");
   const [taper, setTaper] = useState("");
-  const [canvasProps, setCanvasProps] = useState({
-    chordM: "",
-    rootM: "",
-    tipM: "",
-  });
 
   useEffect(() => {
     if (wingType == "Rectangular") {
@@ -38,7 +32,7 @@ const WingCon = () => {
               <select
                 name="WingType"
                 value={wingType}
-                onChange={(e) => setWingType(e.target.value)}
+                onChange={(e) => {setWingType(e.target.value); props.onTypeCanvas(e.target.value)}}
               >
                 <option value="" disabled>
                   --Select Wing Type--
@@ -49,16 +43,17 @@ const WingCon = () => {
             </div>
             <FeatureCom
               title="Wingspan"
-              InputValue={wingSpan}
-              onChange={(b) => setWingSpan(b)}
+              InputValue={props.wingSpan}
+              onChange={props.onWingSpanChange}
               maxInput="180"
               step="10"
               unit="cm."
+              disable={wingType == "" ? true : false}
             />
             <FeatureCom
               title="Taper Ratio"
               InputValue={taper}
-              onChange={(T) => setTaper(T)}
+              onChange={(T) => {setTaper(T); props.onTaperCanvas(T)}}
               maxInput="1"
               step="0.05"
               disable={wingType == "Taper" ? false : true}
@@ -67,11 +62,13 @@ const WingCon = () => {
           </div>
         </div>
         <div className={styles.Component__Wing_Geometry}>
+          <span className={styles.Geometry__WingSpan}>Wingspan</span>
+          <span className={styles.Geometry__Chord}>Chord</span>
           <Canvas
             wingType={wingType}
-            wingSpan={wingSpan}
+            wingSpan={props.wingSpan}
             taper={taper}
-            canvasPropsChange={(props) => setCanvasProps(props)}
+            canvasPropsChange={props.onCanvasPropsChange}
           />
         </div>
       </div>
@@ -80,17 +77,17 @@ const WingCon = () => {
         <div className={styles.Wing__Result_Style}>
           <ResultCom
             title="Root Chord"
-            output={(canvasProps.rootM / 3).toFixed(2)}
+            output={(props.canvasProps.rootM / 3).toFixed(2)}
             unit ="cm."
           />
           <ResultCom
             title="Tip Chord"
-            output={(canvasProps.tipM / 3).toFixed(2)}
+            output={(props.canvasProps.tipM / 3).toFixed(2)}
             unit ="cm."
           />
           <ResultCom
             title="Mean Aerodynamic Chord"
-            output={(canvasProps.chordM / 3).toFixed(2)}
+            output={(props.canvasProps.chordM / 3).toFixed(2)}
             unit ="cm."
           />
         </div>
