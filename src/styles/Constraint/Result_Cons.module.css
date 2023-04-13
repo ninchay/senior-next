@@ -17,7 +17,7 @@
     justify-content: center;
     align-items: center;
     margin-left: 10%;
-    width: 80%;
+    width: 90%;
     margin-top: 10px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -26,19 +26,28 @@
 
 .pwResult, .wsResult, .powerReqResult, .wingAreaResult, .clCruiseaResult {
     flex-direction: column;
-    margin: 1rem;
-    margin-inline: 1rem;
+    margin: 1.2rem;
 }
 .word {
-    font-size: large;
-    padding: 1em;
+    font-size: 1.2rem;
     text-align: center;
+    padding: 1.4rem;
 }
 
 .result_box {
     display: flex;
 }
-
+.answer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.unit {
+    margin-left: 0.2rem;
+    font-size: 1.1rem;
+    margin-top: 0.6rem;
+}
 .power_weight, .wingLoading, .powerReq, .wingArea , .clCruise {
     display: flex;
     flex-direction: row;
@@ -46,5 +55,7 @@
     margin-top: 0.7rem;
     padding: 1rem;
     background-color: yellowgreen;
-    border-radius: 0.7rem;
+    border-radius: 0.4rem;
+    height: 1rem;
+    width: 2.5rem;
 }

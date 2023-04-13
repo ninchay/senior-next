@@ -21,41 +21,57 @@ return (
 
         <div className={styles.pwResult}>
             <span className={styles.word}>Power to Weight</span>
-            <div className={styles.power_weight}>
-                {props.pwValue}
+            <div className={styles.answer}>   
+                <div className={styles.power_weight}>
+                    {props.pwValue > 0 && props.pwValue}
+                </div>
+                <div className={styles.unit}>Watt/kg</div>
             </div>
         </div>
 
         <div className={styles.wsResult}>
             <span className={styles.word}>Wing Loading </span>
-            <div className={styles.wingLoading}>
-                {props.wSValue}
+            <div className={styles.answer}>   
+                <div className={styles.wingLoading}>
+                    {props.wSValue}
+                </div>
+                <div className={styles.unit}>kg/m^2</div>
             </div>
         </div>
 
         <div className={styles.powerReqResult}>
             <span className={styles.word}>Power Required</span>
-            <div className={styles.powerReq}>
-                {powerReq}
+            <div className={styles.answer}>   
+                <div className={styles.powerReq}>
+                {powerReq>0 && powerReq}
+                </div>
+                <div className={styles.unit}>Watt</div>
             </div>
         </div>
 
         <div className={styles.wingAreaResult}>
             <span className={styles.word}>Wing Area</span>
-            <div className={styles.wingArea}>
-                {wingArea}
+            <div className={styles.answer}>   
+                <div className={styles.wingArea}>
+                    {wingArea > 0
+                    && wingArea != Infinity
+                    && wingArea}
+                </div>
+                <div className={styles.unit}>m^2</div>
             </div>
         </div>
 
         <div className={styles.clCruiseaResult}>
             <span className={styles.word}>CL for Cruise</span>
-            <div className={styles.clCruise}>
-                {clCruise}
+            <div className={styles.answer}>   
+                <div className={styles.clCruise}>
+                    {clCruise > 0 && clCruise}
+                </div>
+                <div className={styles.unit}></div>
             </div>
         </div>
     </div>
 </div>
-
 )
 }
 
