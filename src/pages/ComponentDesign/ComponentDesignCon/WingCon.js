@@ -115,7 +115,7 @@ const WingCon = (props) => {
             <option value="" disabled>
               --Select Airfoil--
             </option>
-            <option value="ClarkY">Clark-Y</option>
+            <option value="3.5">Clark-Y</option>
             <option value="NACA23015">NACA-23015</option>
             <option value="Eppler236">Eppler-236</option>
           </select>
