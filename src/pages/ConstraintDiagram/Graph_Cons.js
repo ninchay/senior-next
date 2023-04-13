@@ -180,8 +180,8 @@ function Graph_Cons(props) {
       onClick={(data) => {
         if (data.points.length > 0) {
           const point = data.points[0];
-          const PW1 = point.x
-          const WS1 = point.y
+          const PW1 = point.y
+          const WS1 = point.x
           const PW = PW1.toFixed(3)
           const WS = WS1.toFixed(3)
           setIntersection(`(${point.x}, ${point.y})`);

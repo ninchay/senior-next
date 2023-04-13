@@ -25,7 +25,7 @@ return (
                 <div className={styles.power_weight}>
                     {props.pwValue > 0 && props.pwValue}
                 </div>
-                <div className={styles.unit}>Watt/kg</div>
+                <div className={styles.unit}>Watt/lbf</div>
             </div>
         </div>
 
@@ -35,7 +35,7 @@ return (
                 <div className={styles.wingLoading}>
                     {props.wSValue}
                 </div>
-                <div className={styles.unit}>kg/m^2</div>
+                <div className={styles.unit}>lbf/ft^2</div>
             </div>
         </div>
 
@@ -57,7 +57,7 @@ return (
                     && wingArea != Infinity
                     && wingArea}
                 </div>
-                <div className={styles.unit}>m^2</div>
+                <div className={styles.unit}>ft^2</div>
             </div>
         </div>
 
