@@ -1,0 +1,94 @@
+/* .Wing, .Tail {
+    display: flex;
+    
+} */
+.Component__Wing_Airfoil, .Component__Tail_Airfoil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Component__Wing_Airfoil, .Component__Tail_Airfoil h2{
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 70px;
+    color: var(--color-bar);
+    font-family: var(--font-family3);
+    margin-bottom: 16px;
+
+}
+
+.Airfoil__Selection {
+    width: 20%;
+    padding: 20px 20px;
+    background-color: var(--color-bg);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.Airfoil__Selection h3{
+    font-family: var(--font-family3);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+}
+
+.Airfoil__Selection select {
+    height: 25px;
+    width: 70%;
+    margin: 16px 0;
+    background-color: var(--color-output);
+    border-radius: 6px;
+    font-family: var(--font-family2);
+}
+
+.Airfoil__Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cmAlphaBox {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    margin: 4rem 30rem;
+    height: 30rem;
+    background-color: var(--color-bg);
+    border-radius: 2rem;
+}
+.result{
+    display: flex;
+    text-align: center; 
+    align-items: center; 
+    height: 6rem;
+}
+
+.CancelCmAlpha {
+    margin-top: 5rem;
+    font-size: 100px;
+    color: white;
+    top: 0%;
+    left: 0%;
+    background-color: red;
+    width: 30rem;
+    border-radius: 1rem;
+}
+
+.CheckCmAlpha {
+    margin-top: 5rem;
+    font-size: 100px;
+    color:  white;
+    top: 0%;
+    left: 0%;
+    background-color: green ;
+    width: 30rem;
+    border-radius: 1rem;
+}
+
+
+.CancelinfoBox {
+    background-color: aliceblue;
+    margin-top: 1rem;
+    /* height: 20vh; */
+}
