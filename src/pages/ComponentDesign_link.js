@@ -1,5 +1,5 @@
 import { CombinationCon, FooterCon, FuselageCon, HeaderCon, TailCon, WingCon} from './ComponentDesign/ComponentDesignCon' ;
-import { NavbarCom, Canvas} from './ComponentDesign/ComponentDesignComp';
+import { NavbarCom, Canvas, CmAlpha} from './ComponentDesign/ComponentDesignComp';
 import styles from '../styles/ComponentDesign/ComponentDesign.module.css';
 import { useState, useEffect} from 'react';
 
@@ -115,6 +115,20 @@ const ComponentDesign = () => {
         onVtailChordChange = {handleVtailChord}
         onHtailSpanChange = {handleHtailSpan}
         onVtailSpanChange = {handleVtailSpan}
+        />
+      </div>
+      <div className="cmAlpha">
+        <CmAlpha 
+        wingArea = {wingArea}
+        wingSpan = {wingSpan}
+        airfoilProp={airfoilNumber}
+        />
+      </div>
+      <div className="cmAlpha">
+        <CmAlpha 
+        wingArea = {wingArea}
+        wingSpan = {wingSpan}
+        airfoilProp={airfoilNumber}
         />
       </div>
       <div className="Fuselage">
