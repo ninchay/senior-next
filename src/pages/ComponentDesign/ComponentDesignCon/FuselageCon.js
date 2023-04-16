@@ -10,7 +10,6 @@ const FuselageCon = (props) => {
     props.onFuseChange(FuseL);
   },[props.chrodM, props.tailArm, props.hTailChord]);
 
-  // console.log(props.hTailChord)
   return (
     <div className={styles.Component__Fuselage_Container}>
       <div className={styles.Fuselage__Container_Title}>
@@ -23,7 +22,11 @@ const FuselageCon = (props) => {
           </div>
           <ResultCom
             title="Fuselage Length"
-            output={!isNaN(FuseL) ? FuseL.toFixed(2) : null}
+            output={
+              !isNaN(FuseL) 
+              && FuseL != Infinity
+              ? FuseL.toFixed(2) 
+              : null}
             unit="cm."
           />
         </div>

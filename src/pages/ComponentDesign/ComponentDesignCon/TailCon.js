@@ -75,9 +75,6 @@ const TailCon = (props) => {
           />
         </div>
       </div>
-      <div className={styles.Component__Tail_Graph}>
-        <p>CM-Alpha Graph</p>
-      </div>
       <div className={styles.Component__Tail_Result}>
         <div className={styles.Tail__Result_Header}>
           <h2>Result</h2>
@@ -88,6 +85,7 @@ const TailCon = (props) => {
               title="Horizontal Tail Area"
               output={
                 !isNaN(canvasHtailProps.HtArea)
+                && Number(canvasHtailProps.HtArea) != Infinity
                   ? Number(canvasHtailProps.HtArea).toFixed(3)
                   : null
               }
@@ -101,6 +99,7 @@ const TailCon = (props) => {
               title="Vertical Tail Area"
               output={
                 !isNaN(canvasVtailProps.VtArea)
+                && Number(canvasVtailProps.VtArea) != Infinity
                   ? Number(canvasVtailProps.VtArea).toFixed(3)
                   : null
               }
@@ -115,14 +114,17 @@ const TailCon = (props) => {
             <ResultCom
               title="Horizontal Tail Span"
               output={
-                Number(hTailSpan) > 0 ? Number(hTailSpan).toFixed(2) : null
+                Number(hTailSpan) > 0 
+                ? Number(hTailSpan).toFixed(2) : null
               }
               unit="cm."
             />
             <ResultCom
               title="Vertical Tail Span"
               output={
-                Number(vTailSpan) > 0 ? Number(vTailSpan).toFixed(2) : null
+                Number(vTailSpan) > 0
+                ? Number(vTailSpan).toFixed(2) 
+                : null
               }
               unit="cm."
             />
@@ -132,6 +134,7 @@ const TailCon = (props) => {
               title="Horizontal Tail Chord"
               output={
                 !isNaN(canvasHtailProps.hTailChord)
+                && canvasHtailProps.hTailChord != Infinity
                   ? (canvasHtailProps.hTailChord * 100).toFixed(2)
                   : null
               }
@@ -141,6 +144,7 @@ const TailCon = (props) => {
               title="Vertical Tail Chord"
               output={
                 !isNaN(canvasVtailProps.vTailChord)
+                && canvasVtailProps.vTailChord != Infinity
                   ? (canvasVtailProps.vTailChord * 100).toFixed(2)
                   : null
               }
