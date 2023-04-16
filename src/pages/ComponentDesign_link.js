@@ -125,13 +125,6 @@ const airfoilNumber=parseFloat(airfoil);
         airfoilProp={airfoilNumber}
         />
       </div>
-      <div className="cmAlpha">
-        <CmAlpha 
-        wingArea = {wingArea}
-        wingSpan = {wingSpan}
-        airfoilProp={airfoilNumber}
-        />
-      </div>
       <div className="Fuselage">
         <FuselageCon 
         tailArm={hTailArm}
