@@ -86,7 +86,8 @@ const ComponentDesign = () => {
     setVtailSpan(vs);
   }
 
-  // console.log(vTailChord)
+const [airfoil, setAirfoil]=useState(null)
+const airfoilNumber=parseFloat(airfoil);
 
   return (
     <div className={styles.App}>
