@@ -10,7 +10,7 @@ const FuselageCon = (props) => {
     props.onFuseChange(FuseL);
   },[props.chrodM, props.tailArm, props.hTailChord]);
 
-  console.log(props.hTailChord)
+  // console.log(props.hTailChord)
   return (
     <div className={styles.Component__Fuselage_Container}>
       <div className={styles.Fuselage__Container_Title}>

@@ -18,7 +18,7 @@ const ComponentDesign = () => {
       setHtailArm(m);
     }
     
-  //use for pass parameters to wing, tail, fusselage  
+  //use for pass parameters to wing, tail, fuselage  
   const [canvasProps, setCanvasProps] = useState({
     chordM: null,
     rootM: null,
@@ -60,20 +60,33 @@ const ComponentDesign = () => {
     setFuseL(f);
   }
 
-  // Horizontal TAilSpan used in Combination
+  // Horizontal TailSpan used in Combination
   const[hTailSpan, setHtailSpan] = useState(null);
 
   const handleHtailSpan = (hTailSpan) => {
     setHtailSpan(hTailSpan);
   }
 
+  // Wing Area used for determine wing dimension
   const[wingArea, setWingArea] = useState(null)
 
   const handleWingArea = (A) => {
     setWingArea(A);
   }
 
-  console.log(wingArea)
+  const[vTailChord, setVtailChord] = useState(null)
+
+  const handleVtailChord = (vTail) => {
+    setVtailChord(vTail);
+  }
+
+  const[vTailSpan, setVtailSpan] = useState(null);
+
+  const handleVtailSpan = (vs) => {
+    setVtailSpan(vs);
+  }
+
+  // console.log(vTailChord)
 
   return (
     <div className={styles.App}>
@@ -99,7 +112,9 @@ const ComponentDesign = () => {
         wingSpan = {wingSpan}
         chordM = {canvasProps.chordM}
         onHtailChordChange = {handleHtailChord}
+        onVtailChordChange = {handleVtailChord}
         onHtailSpanChange = {handleHtailSpan}
+        onVtailSpanChange = {handleVtailSpan}
         />
       </div>
       <div className="Fuselage">
@@ -122,6 +137,8 @@ const ComponentDesign = () => {
         canvasPropsChange = {handleCanvasPropsChange}
         hTailSpan = {hTailSpan}
         hTailChord = {hTailChord}
+        vTailChord = {vTailChord}
+        vTailSpan = {vTailSpan}
         />
       </div>
       <div className="Footer">

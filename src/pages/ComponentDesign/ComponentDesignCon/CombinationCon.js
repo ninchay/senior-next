@@ -1,6 +1,6 @@
 import {React,useEffect,useRef,useState} from 'react'
 import styles from '../../../styles/ComponentDesign/ComponentDesignCon/combinationCon.module.css'
-import CombinationTop from '../ComponentDesignComp/CombinationTop';
+import { CombinationTop, CombinationSide } from '../ComponentDesignComp';
 
 const CombinationCon = (props) => {
 
@@ -14,7 +14,7 @@ const CombinationCon = (props) => {
     }
   }, []);
 
-  // console.log(props.fuseL)
+  // console.log(props.vTailChord)
 
   return (
     <div className={styles.CombinationCon}>
@@ -36,12 +36,26 @@ const CombinationCon = (props) => {
             canvasPropsChange = {props.canvasPropsChange}
             hTailSpan = {props.hTailSpan}
             hTailChord = {props.hTailChord}
+            vTailChord = {props.vTailChord}
             />
           </div>
         </div>
         <div className={styles.contentSide}>
           <h3>Aircraft Side View</h3>
           <div className={styles.contentSide_Canvas}>
+            <CombinationSide 
+            fuseL = {props.fuseL}
+            wingSpan={props.wingSpan}
+            chordM = {props.chordM}
+            taper ={props.taper}
+            wingType={props.wingType}
+            rootM = {props.rootM}
+            tipM = {props.tipM}
+            canvasPropsChange = {props.canvasPropsChange}
+            vTailSpan = {props.vTailSpan}
+            hTailChord = {props.hTailChord}
+            vTailChord = {props.vTailChord}
+            />
 
           </div>
         </div>

@@ -20,13 +20,13 @@ const TailCon = (props) => {
   const [vTailSpan, setVtailSpan] = useState(null);
   const [vTailArm, setVtailArm] = useState(null);
 
-
   const handleHtailPropsChange = ({ HtArea, hTailChord }) => {
     setCanvasHtailProps({ HtArea, hTailChord });
     props.onHtailChordChange(hTailChord);
   };
   const handleVtailPropsChange = ({ VtArea, vTailChord }) => {
     setCanvasVtailProps({ VtArea, vTailChord });
+    props.onVtailChordChange(vTailChord);
   };
 
   return (
@@ -43,14 +43,17 @@ const TailCon = (props) => {
             header="Horizontal Tail"
             title1="Tail Moment Arm"
             title2="Horizontal Tail Span"
-            wingArea = {props.wingArea}
+            wingArea={props.wingArea}
             tailType="Horizontal"
-            tailArm = {props.tailArm}
-            onTailArmChange = {props.onTailArmChange}
+            tailArm={props.tailArm}
+            onTailArmChange={props.onTailArmChange}
             MAC={props.chordM}
             tailSpan={hTailSpan}
             onTailPropsChange={handleHtailPropsChange}
-            onTailSpanChange={(h) => {setHtailSpan(h); props.onHtailSpanChange(h)}}
+            onTailSpanChange={(h) => {
+              setHtailSpan(h);
+              props.onHtailSpanChange(h);
+            }}
           />
         </div>
         <div className={styles.Vertical__Tail_Calculation}>
@@ -58,14 +61,17 @@ const TailCon = (props) => {
             header="Vertical Tail"
             title1="Tail Moment Arm"
             title2="Vertical Tail Span"
-            wingArea = {props.wingArea}
+            wingArea={props.wingArea}
             tailType="Vertical"
-            tailArm = {vTailArm}
-            onTailArmChange = {(arm) => setVtailArm(arm)}
+            tailArm={vTailArm}
+            onTailArmChange={(arm) => setVtailArm(arm)}
             wingSpan={props.wingSpan}
             tailSpan={vTailSpan}
             onTailPropsChange={handleVtailPropsChange}
-            onTailSpanChange={(v) => setVtailSpan(v)}
+            onTailSpanChange={(v) => {
+              setVtailSpan(v);
+              props.onVtailSpanChange(v);
+            }}
           />
         </div>
       </div>
@@ -82,12 +88,12 @@ const TailCon = (props) => {
               title="Horizontal Tail Area"
               output={
                 !isNaN(canvasHtailProps.HtArea)
-                  ? (Number(canvasHtailProps.HtArea) * 1e4).toFixed(2)
-                  : Number(0).toFixed(2)
+                  ? Number(canvasHtailProps.HtArea).toFixed(3)
+                  : null
               }
               unit={
                 <span>
-                  cm.<sup>2</sup>
+                  m.<sup>2</sup>
                 </span>
               }
             />
@@ -95,12 +101,12 @@ const TailCon = (props) => {
               title="Vertical Tail Area"
               output={
                 !isNaN(canvasVtailProps.VtArea)
-                  ? (Number(canvasVtailProps.VtArea) * 1e4).toFixed(2)
-                  : Number(0).toFixed(2)
+                  ? Number(canvasVtailProps.VtArea).toFixed(3)
+                  : null
               }
               unit={
                 <span>
-                  cm.<sup>2</sup>
+                  m.<sup>2</sup>
                 </span>
               }
             />
@@ -108,12 +114,16 @@ const TailCon = (props) => {
           <div className={styles.Result__Style_Second}>
             <ResultCom
               title="Horizontal Tail Span"
-              output={Number(hTailSpan).toFixed(2)}
+              output={
+                Number(hTailSpan) > 0 ? Number(hTailSpan).toFixed(2) : null
+              }
               unit="cm."
             />
             <ResultCom
               title="Vertical Tail Span"
-              output={Number(vTailSpan).toFixed(2)}
+              output={
+                Number(vTailSpan) > 0 ? Number(vTailSpan).toFixed(2) : null
+              }
               unit="cm."
             />
           </div>
@@ -123,7 +133,7 @@ const TailCon = (props) => {
               output={
                 !isNaN(canvasHtailProps.hTailChord)
                   ? (canvasHtailProps.hTailChord * 100).toFixed(2)
-                  : Number(0).toFixed(2)
+                  : null
               }
               unit="cm."
             />
@@ -132,7 +142,7 @@ const TailCon = (props) => {
               output={
                 !isNaN(canvasVtailProps.vTailChord)
                   ? (canvasVtailProps.vTailChord * 100).toFixed(2)
-                  : Number(0).toFixed(2)
+                  : null
               }
               unit="cm."
             />
