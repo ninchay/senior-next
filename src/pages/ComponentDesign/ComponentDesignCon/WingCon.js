@@ -116,29 +116,6 @@ const WingCon = (props) => {
           />
         </div>
       </div>
-      <div className={styles.Component__Wing_Airfoil}>
-        <h2>Airfoil Selection</h2>
-        <div className={styles.Airfoil__Selection}>
-          <div className={styles.Airfoil__Header}>
-            <h3>Airfoil Type</h3>
-            <img src="./Qmark.png" alt="Question Mark" />
-          </div>
-          <select
-            name="AirfoilType"
-            value={airfoil}
-            onChange={(e) => {
-              setAirfoil(e.target.value);
-            }}
-          >
-            <option value="" disabled>
-              --Select Airfoil--
-            </option>
-            <option value="3.5">Clark-Y</option>
-            <option value="NACA23015">NACA-23015</option>
-            <option value="Eppler236">Eppler-236</option>
-          </select>
-        </div>
-      </div>
     </div>
   );
 };
