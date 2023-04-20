@@ -1,4 +1,4 @@
-import { CombinationCon, FooterCon, FuselageCon, HeaderCon, TailCon, WingCon} from './ComponentDesign/ComponentDesignCon' ;
+import { CombinationCon, FooterCon, FuselageCon, HeaderCon, TailCon, WingCon, questionHover} from './ComponentDesign/ComponentDesignCon' ;
 import { NavbarCom, Canvas, CmAlpha} from './ComponentDesign/ComponentDesignComp';
 import styles from '../styles/ComponentDesign/ComponentDesign.module.css';
 import { useState, useEffect} from 'react';
@@ -86,6 +86,11 @@ const ComponentDesign = () => {
     setVtailSpan(vs);
   }
 
+  const [cgInput, setCgInput] = useState("")
+  const handleCGchange = (cgInput) => {
+    setCgInput(cgInput);
+  }
+
 const [airfoil, setAirfoil]=useState(null)
 const airfoilNumber=parseFloat(airfoil);
 
@@ -118,11 +123,15 @@ const airfoilNumber=parseFloat(airfoil);
         onVtailSpanChange = {handleVtailSpan}
         />
       </div>
+      <questionHover/>
       <div className="cmAlpha">
         <CmAlpha 
         wingArea = {wingArea}
         wingSpan = {wingSpan}
         airfoilProp={airfoilNumber}
+        cgInput={cgInput}
+        handleCGchange={handleCGchange}
+        chordM={canvasProps.chordM}
         />
       </div>
       <div className="Fuselage">

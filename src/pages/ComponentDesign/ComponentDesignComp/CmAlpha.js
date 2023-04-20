@@ -3,22 +3,37 @@ import styles from '../../../styles/ComponentDesign/ComponentDesignComp/CmAlpha.
 import { Equation } from 'react-equation'
 import CancelIcon from '@mui/icons-material/Cancel';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import {QuestionHover} from '../ComponentDesignComp';
+
 
 const CmAlpha = (props) => {
-
+// react hook
     const [airfoil, setAirfoil] = useState("")
     const [airfoilTail, setAirfoilTail] = useState("")
-    const [isStable, setIsStable] = useState("")
-    const [isShown, setIsShown] = useState(true)
+    const [isStable, setIsStable] = useState("")    
+    const [isShown, setIsShown] = useState(true)                                                                                                                                                                       
+     // const [showComponent, setShowComponent] = useState(false);
 
+    // const handleMouseEnter = () => {
+    // setShowComponent(true);
+    // };
+    // const handleMouseLeave = () => {
+    // setShowComponent(false);
+    // };
+
+// calculate for cg 
+const cgPosition = (props.cgInput*props.chordM/3)/100;
 //calculation 
 const e =0.85;
 const aWing = Number(airfoil)/Number(1+(airfoil/(Math.PI*e*Number( Number(props.wingSpan**2)/props.wingArea )) ));
 const aTail = Number(airfoilTail)/Number(1+(airfoilTail/(Math.PI*e*Number( Number(props.wingSpan**2)/props.wingArea )) ));
-const cmAlpha = -(-0.7*aTail* (1-Number((2*aWing)/(Math.PI*Number( Number(props.wingSpan**2)/props.wingArea )))))
-console.log("cmalpha",cmAlpha, "airfoil", airfoil, "awing", aWing,"atail", aTail)
+const cmAlpha1 = (aWing*(cgPosition-(props.chordM/3))) - (-0.7*aTail* (1-Number((2*aWing)/(Math.PI*Number( Number(props.wingSpan**2)/props.wingArea )))))
+const cmAlpha=cmAlpha1.toFixed(3)
+// console.log("cmalpha",cmAlpha, "airfoil", airfoil, "awing", aWing,"atail", aTail, "wing airfoil", airfoil, "tail", airfoilTail)
+// console.log(props.chordM/3)
 return (
 <>
+<div className={styles.threeBox}>
 <div className={styles.Wing}>
 <div className={styles.Component__Wing_Airfoil}>
     <h2>Airfoil Selection for Wing</h2>
@@ -74,38 +89,50 @@ return (
 </div>
 </div>
 
-<div className={styles.cmAlphaBox}>
-    <div className={styles.result}>
-    {
-        isShown ? cmAlpha < 0 ? 
-            <div>
-                <div className={styles.CheckCmAlpha}><CheckCircleIcon/></div> 
-                <div className={styles.CheckinfoBox}>
-                    <p>The value of Lift Curve Slope is {cmAlpha}</p>
-                    <br />If the lift curve slop is negative (-), it is indicating that the aircraft is STABLE. The chosen values for wingspan, wing area, and airfoils for both wing and tail are suitable for achieving optimal aerodynamic performance.
-                </div>
-            </div> 
-
-        :
-        <div>
-            <div className={styles.CancelCmAlpha}><CancelIcon/></div>
-            <div className={styles.CancelinfoBox}>
-            <p>The value of Lift Curve Slope is {cmAlpha}</p>
-            <br />If the lift curve slop is positive (+), it is indicating that the aircraft is NOT STABLE. The chosen values for wingspan, wing area, and airfoils for both wing and tail may not be appropriate for achieving optimal aerodynamic performance. 
-            <p/> Please try another value
-            </div>
-        </div>
-        : null
-    }
+<div className={styles.cgBox}>
+    <div className={styles.cgTitleQuestion}>
+        <h2>CG Position</h2> 
+            <QuestionHover title="
+            The center of gravity on the mean aerodynamic chord (MAC) in percentage. 
+            Ideally, it should be located at the MAC. "/>
+    </div>
+    <div className={styles.positionCG}><h3>Position of CG in percentage</h3>
+            <input type="number"
+            className={styles.cgInput}
+            placeholder="Input Value"
+            onChange={(e) => {
+                props.handleCGchange(e.target.value, "cg");
+        }}
+            />
     </div>
 
-<div className={styles.showAnswer}>
-{
-    isShown && cmAlpha < 0 && (
-    <div className={styles.textShowAnswer}>hello bitches a0 = {cmAlpha}</div>
-    )
-}
 </div>
+</div>
+
+<div className={styles.cmAlphaBox}>
+
+<div className={styles.result}>
+    {isShown && cmAlpha < 0 ? 
+            <div className={styles.resultBox}>
+                <div className={styles.CheckCmAlpha}><CheckCircleIcon style={{ fontSize: 70}} /></div> 
+                <div className={styles.CheckinfoBox}>
+                    <li>The value of Lift Curve Slope is {cmAlpha}</li>
+                    <li>If the lift curve slope is negative (-), it is indicating that the aircraft is STABLE. </li>
+                    <li>The chosen values for wingspan, wing area, and airfoils for both wing and tail are suitable for achieving optimal aerodynamic performance.</li>
+                </div>
+            </div>
+        : 
+            <div className={styles.resultBox}>
+                <div className={styles.CancelCmAlpha}><CancelIcon style={{ fontSize: 70}} /></div>
+                <div className={styles.CancelinfoBox}>
+                    <li>The value of Lift Curve Slope is {cmAlpha}</li>
+                    <li />If the lift curve slope is positive (+), it is indicating that the aircraft is NOT STABLE. The chosen values for wingspan, wing area, and airfoils for both wing and tail may not be appropriate for achieving optimal aerodynamic performance. 
+
+                </div>
+            </div>
+}
+</div>  
+
 </div>
 </>
 )
