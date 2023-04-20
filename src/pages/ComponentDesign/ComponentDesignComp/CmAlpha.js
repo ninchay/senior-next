@@ -126,7 +126,8 @@ return (
                 <div className={styles.CancelCmAlpha}><CancelIcon style={{ fontSize: 70}} /></div>
                 <div className={styles.CancelinfoBox}>
                     <li>The value of Lift Curve Slope is {cmAlpha}</li>
-                    <li />If the lift curve slope is positive (+), it is indicating that the aircraft is NOT STABLE. The chosen values for wingspan, wing area, and airfoils for both wing and tail may not be appropriate for achieving optimal aerodynamic performance. 
+                    <li>If the lift curve slope is positive (+), it is indicating that the aircraft is NOT STABLE. </li>
+                    <li>The chosen values for wingspan, wing area, and airfoils for both wing and tail may not be appropriate for achieving optimal aerodynamic performance. </li>
 
                 </div>
             </div>
