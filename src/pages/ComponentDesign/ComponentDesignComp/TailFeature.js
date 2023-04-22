@@ -49,15 +49,19 @@ const TailFeature = (props) => {
           </div>
         </div>
         <div className={styles.Tail__Feature_Geometry} ref={illustBox}>
-          <CanvasTail
-            wingArea = {props.wingArea}
-            tailArm={props.tailArm}
-            tailType={props.tailType}
-            tailSpan={props.tailSpan}
-            wingSpan={props.wingSpan}
-            MAC={props.MAC}
-            onChange={props.onTailPropsChange}
-          />
+          <div className={styles.Geometry__Canvas}>
+            <span className={styles.Geometry__Tailspan}>Tailspan</span>
+            <span className={styles.Geometry__TailChord}>Chord</span>
+            <CanvasTail
+              wingArea = {props.wingArea}
+              tailArm={props.tailArm}
+              tailType={props.tailType}
+              tailSpan={props.tailSpan}
+              wingSpan={props.wingSpan}
+              MAC={props.MAC}
+              onChange={props.onTailPropsChange}
+              />
+            </div>
         </div>
       </div>
     </div>

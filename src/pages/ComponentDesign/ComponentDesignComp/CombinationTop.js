@@ -20,10 +20,10 @@ const CombinationTop = (props) => {
     Number((props.hTailChord * 100 * 3));
 
   //Vertical Tail Initial Position Parameters
-  const intVtailX = 328.5 - Number(props.fuseL * 0.03);
+  const intVtailX = 328.5 - Number(props.fuseV * 0.03);
   const intVtailY =
     317 +
-    Number((props.fuseL * 3) / 2) -
+    Number((props.fuseV * 3) / 2) -
     Number((props.vTailChord * 100 * 3));
 
   // console.log(props.hTailSpan*3, props.hTailChord*300,intHtailY)
@@ -106,7 +106,7 @@ const CombinationTop = (props) => {
 
     // Start a new path
     ctx.beginPath();
-    ctx.rect(intVtailX, intVtailY, props.fuseL * 0.06, props.vTailChord * 300);
+    ctx.rect(intVtailX, intVtailY, props.fuseV * 0.06, props.vTailChord * 300);
 
     ctx.fillStyle = "#F6623E";
     ctx.fill();
@@ -116,6 +116,7 @@ const CombinationTop = (props) => {
     // console.log(props.vTailChord)
   }, [
     props.fuseL,
+    props.fuseV,
     props.wingSpan,
     props.hTailSpan,
     ,

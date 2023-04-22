@@ -1,3 +1,10 @@
+.CombinationCon {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
 .CombinationCon_Header{
     display: flex;
     justify-content: center;
@@ -31,10 +38,25 @@
     text-align: center;
 }
 
-.contentTop_Canvas, .contentSide_Canvas {
+.contentTop_Canvas canvas, .contentSide_Canvas canvas {
     height: 634px;
     background-color: var(--color-bg);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
+    
+}
 
+.contentTop_Canvas , .contentSide_Canvas {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.Component__Theme_Bottom img {
+    width: 100%;
+    background: var(--color-bg);
+}
+
+.Component__Theme_Bottom {
+    display: flex;
 }

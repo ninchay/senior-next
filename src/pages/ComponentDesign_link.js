@@ -7,6 +7,7 @@ const ComponentDesign = () => {
   
   //use for pass parameter to combination, wing, and tail
   const [wingSpan,setWingspan] = useState(null);
+
   const handleWingSpanChange = (b) => {
     setWingspan(b);
   };
@@ -17,6 +18,12 @@ const ComponentDesign = () => {
   const handleHtailArmChange = (m) => {
       setHtailArm(m);
     }
+  //Use for pass parameter to Vertical Tail Canvas
+  const[vTailArm, setVtailArm] = useState(null)
+
+  const handleVtailArmChange = (v) => {
+    setVtailArm(v);
+  }
     
   //use for pass parameters to wing, tail, fuselage  
   const [canvasProps, setCanvasProps] = useState({
@@ -58,6 +65,12 @@ const ComponentDesign = () => {
 
   const handleFuseL = (f) => {
     setFuseL(f);
+  }
+  // Fuselage Legth Parameter for Vertical Tail used in Combination
+  const[fuseV, setFuseV] = useState(null);
+
+  const handleFuseV = (fv) => {
+    setFuseV(fv);
   }
 
   // Horizontal TailSpan used in Combination
@@ -113,10 +126,12 @@ const airfoilNumber=parseFloat(airfoil);
       <div className="Tail">
         <TailCon
         tailArm = {hTailArm}
+        vTailArm = {vTailArm}
         wingArea = {wingArea}
         onTailArmChange ={handleHtailArmChange}
         wingSpan = {wingSpan}
         chordM = {canvasProps.chordM}
+        onVtailArmChange = {handleVtailArmChange}
         onHtailChordChange = {handleHtailChord}
         onVtailChordChange = {handleVtailChord}
         onHtailSpanChange = {handleHtailSpan}
@@ -140,11 +155,14 @@ const airfoilNumber=parseFloat(airfoil);
         chordM={canvasProps.chordM}
         hTailChord = {hTailChord}
         onFuseChange = {handleFuseL}
+        onFuseVChange = {handleFuseV} 
+        vTailArm = {vTailArm}
         />
       </div>
       <div className="combination">
         <CombinationCon 
         fuseL = {fuseL}
+        fuseV = {fuseV}
         wingSpan={wingSpan}
         chordM = {canvasProps.chordM}
         taper ={taper}
@@ -153,9 +171,9 @@ const airfoilNumber=parseFloat(airfoil);
         tipM = {canvasProps.tipM}
         canvasPropsChange = {handleCanvasPropsChange}
         hTailSpan = {hTailSpan}
+        vTailSpan = {vTailSpan}
         hTailChord = {hTailChord}
         vTailChord = {vTailChord}
-        vTailSpan = {vTailSpan}
         />
       </div>
       <div className="Footer">

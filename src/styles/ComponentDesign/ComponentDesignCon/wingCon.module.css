@@ -22,13 +22,16 @@
     flex: 1 1;
     justify-content: center;
     margin: 0 5%;
-    position: relative;
     margin-top: 2rem;
+}
+.Geometry__Canvas {
+    position: relative;
 }
 
 .Geometry__WingSpan {
     position: absolute;
     bottom: 100%;
+    right: 45%;
     font-family: var(--font-family2);
 }
 
@@ -36,7 +39,7 @@
     position: absolute;
     font-family: var(--font-family2);
     top: 50%;
-    right: 95%;
+    right: 100%;
     transform: rotate(270deg);
 }
 

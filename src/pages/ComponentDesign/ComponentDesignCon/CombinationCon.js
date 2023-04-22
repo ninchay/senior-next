@@ -27,6 +27,7 @@ const CombinationCon = (props) => {
           <div className={styles.contentTop_Canvas} ref={illustBox}>
             <CombinationTop 
             fuseL = {props.fuseL}
+            fuseV = {props.fuseV}
             wingSpan={props.wingSpan}
             chordM = {props.chordM}
             taper ={props.taper}
@@ -45,6 +46,7 @@ const CombinationCon = (props) => {
           <div className={styles.contentSide_Canvas}>
             <CombinationSide 
             fuseL = {props.fuseL}
+            fuseV = {props.fuseV}
             wingSpan={props.wingSpan}
             chordM = {props.chordM}
             taper ={props.taper}
@@ -61,7 +63,9 @@ const CombinationCon = (props) => {
         </div>
 
       </div>
-
+      <div className={styles.Component__Theme_Bottom}>
+        <img src="./themes.png" alt="themes" />
+      </div>
     </div>
   )
 }

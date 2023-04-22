@@ -73,15 +73,17 @@ const WingCon = (props) => {
           </div>
         </div>
         <div className={styles.Component__Wing_Geometry}>
-          <span className={styles.Geometry__WingSpan}>Wingspan</span>
-          <span className={styles.Geometry__Chord}>Chord</span>
-          <Canvas
-            wingArea={props.wingArea}
-            wingType={wingType}
-            wingSpan={props.wingSpan}
-            taper={taper}
-            canvasPropsChange={props.onCanvasPropsChange}
-          />
+          <div className={styles.Geometry__Canvas}>
+            <span className={styles.Geometry__WingSpan}>Wingspan</span>
+            <span className={styles.Geometry__Chord}>Chord</span>
+            <Canvas
+              wingArea={props.wingArea}
+              wingType={wingType}
+              wingSpan={props.wingSpan}
+              taper={taper}
+              canvasPropsChange={props.onCanvasPropsChange}
+              />
+          </div>
         </div>
       </div>
       <div className={styles.Component__Wing_Result}>

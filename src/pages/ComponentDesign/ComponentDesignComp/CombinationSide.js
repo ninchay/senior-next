@@ -16,7 +16,7 @@ const CombinationSide = (props) => {
 
   //Vertical Tail Initial Position Parameters
   const intVtailX =
-    328.5 + Number(props.fuseL * 1.5) - Number(props.vTailChord * 300);
+    328.5 + Number(props.fuseV * 1.5) - Number(props.vTailChord * 300);
   const intVtailY = intY - Number(props.vTailSpan * 3);
 
   const combinationSideRef = useRef(null);
@@ -73,6 +73,7 @@ const CombinationSide = (props) => {
 
   }, [
     props.fuseL,
+    props.fuseV,
     props.chordM,
     props.vTailSpan,
     ,

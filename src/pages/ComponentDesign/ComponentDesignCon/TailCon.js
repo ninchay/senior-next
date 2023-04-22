@@ -64,7 +64,7 @@ const TailCon = (props) => {
             wingArea={props.wingArea}
             tailType="Vertical"
             tailArm={vTailArm}
-            onTailArmChange={(arm) => setVtailArm(arm)}
+            onTailArmChange={(arm) => {setVtailArm(arm); props.onVtailArmChange(arm)}}
             wingSpan={props.wingSpan}
             tailSpan={vTailSpan}
             onTailPropsChange={handleVtailPropsChange}

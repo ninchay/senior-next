@@ -69,20 +69,40 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-    width: 48%;
-    height:379px;
+}
+.Geometry__Canvas {
+    position: relative;
+}
+
+.Geometry__Canvas canvas {
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    overflow: hidden;
 }
+
+.Geometry__Tailspan {
+    position: absolute;
+    font-family: var(--font-family2);
+    bottom: 100%;
+    left: 40%;
+}
+
+.Geometry__TailChord {
+    position: absolute;
+    font-family: var(--font-family2);
+    top: 45%;
+    right: 97%;
+    transform: rotate(270deg);
+}
+
+
 .Tail__Feature_Calculation p {
     font-family: var(--font-family2);
 }
 /* .Tail__Feature_Geometry p {
     width: 100%;
     height: 100%;
-    background: #FFFFFF;
+    background: #FFFFFF;qqqqq
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
 } */

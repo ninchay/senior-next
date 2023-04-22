@@ -2,17 +2,30 @@
     display: flex;
     margin: 20vh 50px;
     margin-bottom: 5vh;
+    position: relative;
+    flex-direction: column;
     /* gap: 200px; */
-    align-items: baseline;
-    justify-content: space-between;
 
+}
+
+/* .Home__Footer_Content {
+    display: flex;
+    flex-direction: column;
+} */
+
+
+.Footer__Content {
+    display: flex;
+    flex-direction: column;
 }
 
 .Home__footer_container_space div {
     width: 312.76px;
 }
 
-
+.Home__Footer_container_quote {
+    position: absolute;
+}
 .Home__Footer_container_quote p {
     font-family: var(--font-family2);
     font-weight: 400;
@@ -20,36 +33,47 @@
     text-align: center;
 }
 
-.Home__Footer_container_contact p {
+.Footer__Title, .Footer__Email {
+    display: flex;
+    justify-content: center;
+}
+
+.Footer__Title p {
+    font-family: var(--font-family2);
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 26px;
+    margin: 0 0;
+}
+.Footer__Email p {
     font-family: var(--font-family2);
     font-weight: 500;
-    font-size: 26px;
-    text-align: center;
-}
-
-
-.Home__Footer_container_input {
-    display: flex;
-    /* width: 100%; */
-}
-
-
-.Home__Footer_container_input input {
-    /* border: none; */
-    outline: none;
-    width: 100%;
-    font-family: var(--font-family2);
     font-size: 20px;
     line-height: 26px;
-    min-width: 300px;
 }
 
-.Home__Footer_container_input button {
-    border: none;
-    width: 100%;
-    font-family: var(--font-family2);
-    background-color: var(--color-bar);
-    color: white;
-    cursor: pointer;
-    font-weight: 550;
+.Footer__Icons {
+    display: flex;
+    justify-content: center;
+}
+
+.FacebookIcon:hover {
+    color: var(--color-bar);
+    transition: 0.5s;
+}
+
+.LinkedinIcon:hover {
+    color: var(--color-bar);
+    transition: 0.5s;
+}
+
+.Footer__Img {
+    position: absolute;
+    bottom: 28.4%;
+    right:80%;
+
+}
+
+.Footer__Img img {
+    height: 80px;
 }
