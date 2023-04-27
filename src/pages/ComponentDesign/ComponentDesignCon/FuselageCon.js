@@ -1,19 +1,19 @@
 import { useEffect } from "react";
 import styles from "../../../styles/ComponentDesign/ComponentDesignCon/fuselageCon.module.css";
-import { ResultCom } from "../ComponentDesignComp";
+import { QuestionHover, ResultCom } from "../ComponentDesignComp";
+import { fuselageLength } from "../ComponentDesignComp/Article/Content";
 
 const FuselageCon = (props) => {
+  const {onFuseChange} = props
   const FuseL =
     (1.75 * props.chordM) / 3 + Number(props.tailArm) + 100*props.hTailChord ;
+
   const FuseV = (1.75 * props.chordM) / 3 + Number(props.vTailArm) + 100*props.hTailChord ;
 
-  useEffect(()=>{
-    props.onFuseChange(FuseL);
-  },[props.chrodM, props.tailArm, props.hTailChord]);
 
   useEffect(()=>{
-    props.onFuseVChange(FuseV);
-  },[props.vTailArm]);
+    onFuseChange({FuseL, FuseV});
+  },[FuseL,FuseV]);
 
   return (
     <div className={styles.Component__Fuselage_Container}>
@@ -24,6 +24,7 @@ const FuselageCon = (props) => {
         <div className={styles.Fuselage__Container_Style}>
           <div className={styles.Fuselage__Container_Header}>
             <h2>Result</h2>
+            <QuestionHover title={fuselageLength}/>
           </div>
           <ResultCom
             title="Fuselage Length"

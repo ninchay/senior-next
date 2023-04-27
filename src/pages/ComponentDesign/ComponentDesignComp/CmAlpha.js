@@ -11,14 +11,6 @@ const CmAlpha = (props) => {
   const [airfoilTail, setAirfoilTail] = useState("");
   const [isStable, setIsStable] = useState("");
   const [isShown, setIsShown] = useState(true);
-  // const [showComponent, setShowComponent] = useState(false);
-
-  // const handleMouseEnter = () => {
-  // setShowComponent(true);
-  // };
-  // const handleMouseLeave = () => {
-  // setShowComponent(false);
-  // };
 
   // calculate for cg
   const cgPosition =
