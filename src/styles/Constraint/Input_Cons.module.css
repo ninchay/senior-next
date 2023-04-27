@@ -1,79 +1,89 @@
+.option {
+margin: 10px;
+}
+.unitSelect {
+    border-radius: 1rem;
+    width: 10rem;
+    height: 2rem;
+    background-color: var(--color-bar);
+}
+.unitSelect option {
+    text-align: center;
+}
 .card {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    font-size: 8px;
-    font-family: 'Jost';
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 8px;
+  font-family: "Jost";
 }
 
 .container {
-    display: flex;
-    font-size: 8px;
-    flex: 0.6;
-    justify-content: space-between;
+  display: flex;
+  font-size: 8px;
+  flex: 0.6;
+  justify-content: space-between;
 }
 .sub_container1 {
-    margin: 2%;
-    font-size: 16px;
-    padding: 2%;
-    flex:0.4;
-    height:max-content;
-    background-color: white;
-    box-shadow: 0px 4px 4px;
-    border-radius: 20px;
+  margin: 2%;
+  font-size: 16px;
+  padding: 2%;
+  flex: 0.4;
+  height: max-content;
+  background-color: white;
+  box-shadow: 0px 4px 4px;
+  border-radius: 20px;
 }
-.sub_container2, .sub_container3
-{
-    margin: 2%;
-    font-size: 16px;
-    padding: 2%;
-    flex:0.3;
-    background-color: white;
-    box-shadow: 0px 4px 4px;
-    border-radius: 20px;
-} 
-
-.header1, .header2, .header3 {
-    margin-bottom: 10px;
-    text-align: center;
-    font-size: large;
+.sub_container2,
+.sub_container3 {
+  margin: 2%;
+  font-size: 16px;
+  padding: 2%;
+  flex: 0.3;
+  background-color: white;
+  box-shadow: 0px 4px 4px;
+  border-radius: 20px;
 }
 
-/* .input1_value, .input1_2_value, .input2_value, .input2_1_value {
-    border-radius: 6px;
-    width: 100%;
-}  */
-.overall_weight, .velocity, .altitude, .torw, .roc ,.BAngle
-{
-    height:25px;
-    width: 40%;
+.header1,
+.header2,
+.header3 {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: large;
 }
-/* starts sub container 1 */
 
-    /* .input1, .input1_2{
-        margin-top: 4%;
-        
-    } */
-    
+.overall_weight,
+.velocity,
+.altitude,
+.torw,
+.roc,
+.BAngle {
+  height: 25px;
+  width: 5.5rem;
+  background-color: var(--color-input);
+  border-radius: 6px;
+  border: solid 1px gray;
+}
+
 .inputSection {
-        display: flex;
-        flex-direction: row;
-        text-align: center;
-        
-    }
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin-top: 0.5rem;
+}
 
-    .inputTitle {
-        margin:0%;
-    }
+.inputTitle {
+  display: flex;
+}
 
-    /* .inputValue {
-        width: 100%;
-        margin-left: 10px;
-        background-color: #E9E9E9;
-        border: none;
-    } */
 
 .inputUnit {
-    flex: 0.5;
-    margin-top: 2%;
-    } 
+  margin-top: 0;
+  margin-left: 0.5rem;
+}
+
+.questionHover {
+    display: flex;
+    flex-direction: row;
+}

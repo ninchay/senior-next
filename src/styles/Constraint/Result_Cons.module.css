@@ -1,61 +1,71 @@
 .result_summary {
-    width: 90%;
+  width: 90%;
+  font-family: "Jost";
+  margin-top: 2rem;
 }
 
 .header_result {
-    text-align: center;
-    font-family: 'Noto Sans TC';
-    font-size: 30px;
-    border-bottom: 1px solid black;
-    align-items: center;
-    color: #FF6948;
+  text-align: center;
+  font-family: "Noto Sans TC";
+  font-size: 30px;
+  border-bottom: 1px solid black;
+  align-items: center;
+  color: #ff6948;
 }
 
 .container_result {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-left: 10%;
-    width: 90%;
-    margin-top: 10px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-}  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-inline: 3em;
+  width: 90%;
+  margin-top: 1rem;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
 
-.pwResult, .wsResult, .powerReqResult, .wingAreaResult, .clCruiseaResult {
-    flex-direction: column;
-    margin: 1.2rem;
+.pwResult,
+.wsResult,
+.powerReqResult,
+.wingAreaResult,
+.clCruiseaResult {
+  flex-direction: column;
+  margin: 1.2rem;
 }
 .word {
-    font-size: 1.2rem;
-    text-align: center;
-    padding: 1.4rem;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 1.4rem;
 }
 
 .result_box {
-    display: flex;
+  display: flex;
 }
 .answer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .unit {
-    margin-left: 0.2rem;
-    font-size: 1.1rem;
-    margin-top: 0.6rem;
+  margin-left: 0.2rem;
+  font-size: 1.1rem;
+  margin-top: 0.6rem;
 }
-.power_weight, .wingLoading, .powerReq, .wingArea , .clCruise {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 0.7rem;
-    padding: 1rem;
-    background-color: yellowgreen;
-    border-radius: 0.4rem;
-    height: 1rem;
-    width: 2.5rem;
+.power_weight,
+.wingLoading,
+.powerReq,
+.wingArea,
+.clCruise {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 0.7rem;
+  padding: 1rem;
+  background-color: yellowgreen;
+  border-radius: 0.4rem;
+  height: 1rem;
+  width: 2.5rem;
 }

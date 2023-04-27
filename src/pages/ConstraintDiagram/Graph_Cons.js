@@ -1,3 +1,4 @@
+import { ReportProblemSharp } from '@mui/icons-material';
 import {Result_Cons} from './Result_Cons'
 import React, {useState, useEffect} from 'react';
 
@@ -20,11 +21,20 @@ function Graph_Cons(props) {
   const [intersection, setIntersection] = useState("");
   const { onRhoCruiseChange } = props;
   // const {handlePowerToWeight} = props;
-
+  const unitMap={"weight":{"si":2.20462, "imperial":1},
+                  "velocity":{"si":3.28084, "imperial":1},
+                  "altitude":{"si":3.28084, "imperial":1},
+                  "torw":{"si":3.28084, "imperial":1},
+                  "roc":{"si":3.28084, "imperial":1}
+}
+//   console.log("weight",props.weight*unitMap["weight"][props.unit],
+//   "velocity", props.velocity*unitMap["velocity"][props.unit],
+// "torw", props.torw*unitMap["torw"][props.unit]
+//   )
   // solve for density
-  const T= parameter.T_SL - (1.98*(props.altitude/1000)); //celcius and ft
+  const T= parameter.T_SL - (1.98*((props.altitude*unitMap["altitude"][props.unit])/1000)); //celcius and ft
   const T_rho = T+273.15; //change to kelvin
-  const altitude_rho = props.altitude*0.3048; //convert from ft to m
+  const altitude_rho = (props.altitude*unitMap["altitude"][props.unit])*0.3048; //convert from ft to m
   const P_rho=parameter.P*(1-(0.0065*altitude_rho/(T_rho)))**5.2561;
   const rhoCruise= (P_rho/(parameter.R*T_rho))*0.0019403203;
 
@@ -41,11 +51,11 @@ function Graph_Cons(props) {
   );
   const V_to = V_stall_to.map((v,i) => 1.2 * V_stall_to[i]);
   const PWtakeoff = WS.map(
-    (WS, i) => (1.44 * WS * V_to[i] * (745.7 / 550)) / (parameter.g * rhoCruise * parameter.Cl_max * props.torw)
+    (WS, i) => (1.44 * WS * V_to[i] * (745.7 / 550)) / (parameter.g * rhoCruise * parameter.Cl_max *(props.torw*unitMap["torw"][props.unit]))
   );
   
   //landing
-  const Va = Math.sqrt(props.torw / (0.3 * 0.6));
+  const Va = Math.sqrt((props.torw*unitMap["torw"][props.unit]) / (0.3 * 0.6));
   const V_STALLL = (Va * 1.68781) / 1.3; //change from knot to ft/s
   const WS_LDSL = (V_STALLL**2 * rhoCruise * parameter.Cl_max) / 2;
   const WS_LDSL_array = WS.map(
@@ -53,21 +63,21 @@ function Graph_Cons(props) {
   )
 
   //roc
-  const CL_ROC = WS.map((WS) => WS / (0.5 * rhoCruise * props.velocity ** 2));
+  const CL_ROC = WS.map((WS) => WS / (0.5 * rhoCruise * (props.velocity*unitMap["velocity"][props.unit]) ** 2));
   const LD_ROC = CL_ROC.map((cl) => cl / (parameter.cd_clean + (K * cl**2)));
-  const PW_roc =  LD_ROC.map((ld)=>(Number(props.roc) + Number((props.velocity / ld)))*(745.7/550))
+  const PW_roc =  LD_ROC.map((ld)=>(Number(props.roc*unitMap["roc"][props.roc]) + Number(((props.velocity*unitMap["velocity"][props.unit]) / ld)))*(745.7/550))
 
 // (props.roc +(props.velocity / ld))*(745.7/550))
   //turn 
   const n = 1 / Math.cos(props.BAngle*Math.PI/180);
   const PW_turn = WS.map(
     (WS) =>
-      (((0.5 * rhoCruise * props.velocity**2 * parameter.cd_clean) / WS) + ( (n**2 * K * WS) /(0.5*rhoCruise* props.velocity**2))) * props.velocity * 745.7 / 550);
+      (((0.5 * rhoCruise * (props.velocity*unitMap["velocity"][props.unit])**2 * parameter.cd_clean) / WS) + ( (n**2 * K * WS) /(0.5*rhoCruise* (props.velocity*unitMap["velocity"][props.unit])**2))) * (props.velocity*unitMap["velocity"][props.unit]) * 745.7 / 550);
 
 //
   const PW_Cruise = WS.map(
     (WS) =>
-    (((0.5 * rhoCruise * props.velocity**2 * parameter.cd_clean) / WS) + ( (K * WS) /(0.5*rhoCruise* props.velocity**2))) * props.velocity * 745.7 / 550);
+    (((0.5 * rhoCruise * (props.velocity*unitMap["velocity"][props.unit])**2 * parameter.cd_clean) / WS) + ( (K * WS) /(0.5*rhoCruise* (props.velocity*unitMap["velocity"][props.unit])**2))) * (props.velocity*unitMap["velocity"][props.unit]) * 745.7 / 550);
 
 // function handleChange(value, key) {
 //   setParameter(prevState => ({
@@ -105,7 +115,6 @@ function Graph_Cons(props) {
 //     const text = `Clicked point: (${x}, ${y})`;
 //   }
 // };
-
   return (
 <>
     <div className="Graph">
