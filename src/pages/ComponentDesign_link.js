@@ -1,186 +1,187 @@
-import { CombinationCon, FooterCon, FuselageCon, HeaderCon, TailCon, WingCon, questionHover} from './ComponentDesign/ComponentDesignCon' ;
-import { NavbarCom, Canvas, CmAlpha} from './ComponentDesign/ComponentDesignComp';
-import styles from '../styles/ComponentDesign/ComponentDesign.module.css';
-import { useState, useEffect} from 'react';
+import {
+  CombinationCon,
+  FooterCon,
+  FuselageCon,
+  HeaderCon,
+  TailCon,
+  WingCon,
+} from "./ComponentDesign/ComponentDesignCon";
+import { NavbarCom, CmAlpha } from "./ComponentDesign/ComponentDesignComp";
+import styles from "../styles/ComponentDesign/ComponentDesign.module.css";
+import { useState, useEffect } from "react";
+import Cookies from "js-cookie";
 
 const ComponentDesign = () => {
+  //Wing Parameters State and their HandleChange
+
+  const [wingParam, setWingParam] = useState({
+    wingArea: "",
+    wingType: "",
+    wingSpan: "",
+    wingTaper: "",
+  });
+
   
-  //use for pass parameter to combination, wing, and tail
-  const [wingSpan,setWingspan] = useState(null);
-
-  const handleWingSpanChange = (b) => {
-    setWingspan(b);
-  };
-
-  //Use for pass parameter to tail and fuselage
-  const [hTailArm, setHtailArm] = useState(null);
-
-  const handleHtailArmChange = (m) => {
-      setHtailArm(m);
-    }
-  //Use for pass parameter to Vertical Tail Canvas
-  const[vTailArm, setVtailArm] = useState(null)
-
-  const handleVtailArmChange = (v) => {
-    setVtailArm(v);
-  }
-    
-  //use for pass parameters to wing, tail, fuselage  
+  //CanvasPropsChange
   const [canvasProps, setCanvasProps] = useState({
     chordM: null,
     rootM: null,
     tipM: null,
   });
-  const handleCanvasPropsChange = (chordM) => {
-    setCanvasProps(chordM);
+  const handleCanvasPropsChange = (props) => {
+    setCanvasProps(props);
   };
 
-// For Retrieve State from WingCon to illustrate another wing Canvas
-  const [taper,setTaper] = useState(null);
-
-  const handleTaperCanvas = (T) => {
-    setTaper(T);
+  const handleWingParam = (name, value) => {
+    setWingParam({ ...wingParam, [name]: value });
+    Cookies.set(name, value, { expires: 1 / (24 * 60) });
+  };
+  
+  //Tail Parameters, CanvasTailProps, and their HandleChanges
+  
+  const [tailParam, setTailParam] = useState({
+    hTailArm: "",
+    hTailSpan: "",
+    vTailArm: "",
+    vTailSpan: "",
+  });
+  
+  const handleTailParam = (name, value) => {
+    setTailParam({ ...tailParam, [name]: value });
+    Cookies.set(name, value, { expires: 1 / (24 * 60) });
+  };
+  
+  const [canvasHtailProps, setCanvasHtailProps] = useState({
+    HtArea: null,
+    hTailChord: null,
+  });
+  
+  const handleHtailPropsChange = ({HtArea, hTailChord}) => {
+    setCanvasHtailProps({HtArea, hTailChord});
   }
-  const [wingType,setWingType] = useState(null)
-
-  const handleTypeCanvas = (w) => {
-    setWingType(w);
-  }
-
-  useEffect(() => {
-    if (wingType == "Rectangular") {
-      setTaper(1);
-    }
-  }, [wingType]);
-
-  // For retrieve HtailChord for refine fuselage length
-  const [hTailChord,setHtailChord] = useState(null);
-
-  const handleHtailChord = (hTail) => {
-    setHtailChord(hTail);
-  }
-
-  // Fuselage Legth Parameter used in Combination
-  const[fuseL, setFuseL] = useState(null);
-
-  const handleFuseL = (f) => {
-    setFuseL(f);
-  }
-  // Fuselage Legth Parameter for Vertical Tail used in Combination
-  const[fuseV, setFuseV] = useState(null);
-
-  const handleFuseV = (fv) => {
-    setFuseV(fv);
+  const [canvasVtailProps, setCanvasVtailProps] = useState({
+    VtArea: null,
+    vTailChord: null,
+  });
+  const handleVtailPropsChange = ({VtArea, vTailChord}) => {
+    setCanvasVtailProps({VtArea, vTailChord});
   }
 
-  // Horizontal TailSpan used in Combination
-  const[hTailSpan, setHtailSpan] = useState(null);
+  //Fuselage Parameters and Their HandleChanges
+  const [fuseProps, setFuseProps] = useState({
+    FuseL: null,
+    FuseV: null,
+  })
 
-  const handleHtailSpan = (hTailSpan) => {
-    setHtailSpan(hTailSpan);
-  }
+  const handleFuseChange = ({FuseL, FuseV}) => {
+    setFuseProps({FuseL, FuseV});
+  };
 
-  // Wing Area used for determine wing dimension
-  const[wingArea, setWingArea] = useState(null)
-
-  const handleWingArea = (A) => {
-    setWingArea(A);
-  }
-
-  const[vTailChord, setVtailChord] = useState(null)
-
-  const handleVtailChord = (vTail) => {
-    setVtailChord(vTail);
-  }
-
-  const[vTailSpan, setVtailSpan] = useState(null);
-
-  const handleVtailSpan = (vs) => {
-    setVtailSpan(vs);
-  }
-
-  const [cgInput, setCgInput] = useState("")
+  const [cgInput, setCgInput] = useState("");
   const handleCGchange = (cgInput) => {
     setCgInput(cgInput);
-  }
+  };
+  
+  const [airfoil, setAirfoil] = useState(null);
+  const airfoilNumber = parseFloat(airfoil);
 
-const [airfoil, setAirfoil]=useState(null)
-const airfoilNumber=parseFloat(airfoil);
+  useEffect(() => {
+    //WingParam Storage
+    const storedWingArea = Cookies.get("wingArea");
+    if (storedWingArea) {
+      setWingParam((prevState) => ({ ...prevState, wingArea: storedWingArea }));
+    }
+    const storedWingType = Cookies.get("wingType");
+    if (storedWingType) {
+      setWingParam((prevState) => ({ ...prevState, wingType: storedWingType }));
+    }
+    const storedWingSpan = Cookies.get("wingSpan");
+    if (storedWingSpan) {
+      setWingParam((prevState) => ({ ...prevState, wingSpan: storedWingSpan }));
+    }
+    const storedWingTaper = Cookies.get("wingTaper");
+    if (storedWingTaper) {
+      setWingParam((prevState) => ({...prevState,wingTaper: storedWingTaper}));
+    }
+    //TailParam Storage
+    const storedhTailArm = Cookies.get("hTailArm");
+    if (storedhTailArm) {
+      setTailParam((prevState) => ({ ...prevState, hTailArm: storedhTailArm }));
+    }
+    const storedhTailSpan = Cookies.get("hTailSpan");
+    if (storedhTailSpan) {
+      setTailParam((prevState) => ({ ...prevState, hTailSpan: storedhTailSpan }));
+    }
+    const storedvTailArm = Cookies.get("vTailArm");
+    if (storedvTailArm) {
+      setTailParam((prevState) => ({ ...prevState, vTailArm: storedvTailArm }));
+    }
+    const storedvTailSpan = Cookies.get("vTailSpan");
+    if (storedvTailSpan) {
+      setTailParam((prevState) => ({...prevState,vTailSpan: storedvTailSpan}));
+    }
+  }, []);
 
   return (
     <div className={styles.App}>
-        <NavbarCom/>
-        <HeaderCon/>
+      <NavbarCom />
+      <HeaderCon />
       <div className="Wing">
         <WingCon
-        wingArea = {wingArea}
-        onWingAreaChange = {handleWingArea}
-        wingSpan = {wingSpan}
-        onWingSpanChange={handleWingSpanChange}
-        canvasProps = {canvasProps}
-        onCanvasPropsChange = {handleCanvasPropsChange}
-        onTaperCanvas = {handleTaperCanvas}
-        onTypeCanvas ={handleTypeCanvas}
-        />
+          {...wingParam}
+          onWingParamChange={handleWingParam}
+          canvasProps={canvasProps}
+          onCanvasPropsChange={handleCanvasPropsChange}
+          />
       </div>
       <div className="Tail">
         <TailCon
-        tailArm = {hTailArm}
-        vTailArm = {vTailArm}
-        wingArea = {wingArea}
-        onTailArmChange ={handleHtailArmChange}
-        wingSpan = {wingSpan}
-        chordM = {canvasProps.chordM}
-        onVtailArmChange = {handleVtailArmChange}
-        onHtailChordChange = {handleHtailChord}
-        onVtailChordChange = {handleVtailChord}
-        onHtailSpanChange = {handleHtailSpan}
-        onVtailSpanChange = {handleVtailSpan}
+          wingArea={wingParam.wingArea}
+          wingSpan={wingParam.wingSpan}
+          {...tailParam}
+          {...canvasHtailProps}
+          {...canvasVtailProps}
+          onTailParamChange={handleTailParam}
+          onHtailPropsChange={handleHtailPropsChange}
+          onVtailPropsChange={handleVtailPropsChange}
+          chordM={canvasProps.chordM}
         />
       </div>
-      <questionHover/>
       <div className="cmAlpha">
-        <CmAlpha 
-        wingArea = {wingArea}
-        wingSpan = {wingSpan}
-        airfoilProp={airfoilNumber}
-        cgInput={cgInput}
-        handleCGchange={handleCGchange}
-        chordM={canvasProps.chordM}
+        <CmAlpha
+          wingArea={wingParam.wingArea}
+          wingSpan={wingParam.wingSpan}
+          airfoilProp={airfoilNumber}
+          cgInput={cgInput}
+          handleCGchange={handleCGchange}
+          chordM={canvasProps.chordM}
         />
       </div>
       <div className="Fuselage">
-        <FuselageCon 
-        tailArm={hTailArm}
-        chordM={canvasProps.chordM}
-        hTailChord = {hTailChord}
-        onFuseChange = {handleFuseL}
-        onFuseVChange = {handleFuseV} 
-        vTailArm = {vTailArm}
+        <FuselageCon
+          tailArm={tailParam.hTailArm}
+          chordM={canvasProps.chordM}
+          hTailChord={canvasHtailProps.hTailChord}
+          vTailArm={tailParam.vTailArm}
+          onFuseChange={handleFuseChange}
         />
       </div>
       <div className="combination">
-        <CombinationCon 
-        fuseL = {fuseL}
-        fuseV = {fuseV}
-        wingSpan={wingSpan}
-        chordM = {canvasProps.chordM}
-        taper ={taper}
-        wingType={wingType}
-        rootM = {canvasProps.rootM}
-        tipM = {canvasProps.tipM}
-        canvasPropsChange = {handleCanvasPropsChange}
-        hTailSpan = {hTailSpan}
-        vTailSpan = {vTailSpan}
-        hTailChord = {hTailChord}
-        vTailChord = {vTailChord}
+        <CombinationCon
+          {...fuseProps}
+          {...wingParam}
+          {...canvasProps}
+          {...tailParam}
+          canvasPropsChange={handleCanvasPropsChange}
+          hTailChord={canvasHtailProps.hTailChord}
+          vTailChord={canvasVtailProps.vTailChord}
         />
       </div>
       <div className="Footer">
         <FooterCon />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ComponentDesign
+export default ComponentDesign;

@@ -14,7 +14,7 @@ const CombinationCon = (props) => {
     }
   }, []);
 
-  // console.log(props.vTailChord)
+  // console.log(props.vTailChord,props.FuseL,props.wingSpan)
 
   return (
     <div className={styles.CombinationCon}>
@@ -26,8 +26,8 @@ const CombinationCon = (props) => {
           <h3>Aircraft Top View</h3>
           <div className={styles.contentTop_Canvas} ref={illustBox}>
             <CombinationTop 
-            fuseL = {props.fuseL}
-            fuseV = {props.fuseV}
+            fuseL = {props.FuseL}
+            fuseV = {props.FuseV}
             wingSpan={props.wingSpan}
             chordM = {props.chordM}
             taper ={props.taper}
@@ -45,8 +45,8 @@ const CombinationCon = (props) => {
           <h3>Aircraft Side View</h3>
           <div className={styles.contentSide_Canvas}>
             <CombinationSide 
-            fuseL = {props.fuseL}
-            fuseV = {props.fuseV}
+            fuseL = {props.FuseL}
+            fuseV = {props.FuseV}
             wingSpan={props.wingSpan}
             chordM = {props.chordM}
             taper ={props.taper}

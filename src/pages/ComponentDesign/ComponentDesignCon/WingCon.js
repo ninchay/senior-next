@@ -1,21 +1,19 @@
-import { Canvas, FeatureCom } from "../ComponentDesignComp";
+import { Canvas, FeatureCom, QuestionHover } from "../ComponentDesignComp";
 import { ResultCom } from "../ComponentDesignComp";
 import { useEffect, useState } from "react";
 import styles from "../../../styles/ComponentDesign/ComponentDesignCon/wingCon.module.css";
+import {wingArea, wingType, wingSpan, taperedRatio} from "../ComponentDesignComp/Article/Content"
 
 const WingCon = (props) => {
 
-  const [wingType, setWingType] = useState("");
-  const [airfoil, setAirfoil] = useState("");
-  const [taper, setTaper] = useState("");
 
   useEffect(() => {
-    if (wingType == "Rectangular") {
-      setTaper(1);
+    if (props.wingType == "Rectangular") {
+      props.onWingParamChange("wingTaper", 1);
     }
-  }, [wingType]);
+  }, [props.wingType]);
 
-  // console.log(wingType, taper);
+  // console.log("wingType",props.wingType, "wingArea",props.wingArea,"wingSpan",props.wingSpan);
   return (
     <div className={styles.Component__Wing_Container}>
       <div className={styles.Component__Wing_Calculation}>
@@ -30,16 +28,19 @@ const WingCon = (props) => {
                   </span>
                 }
                 step="0.1"
-                onChange={props.onWingAreaChange}
+                storedValue = {props.wingArea}
+                onChange={(value) => props.onWingParamChange("wingArea", value)}
+                content={wingArea}
               />
             <div className={styles.Wing__Selection}>
+              <div className={styles.wing__Selection_Title}>
               <h3>Wing Type</h3>
+                <QuestionHover  title={wingType}/>
+              </div>
               <select
-                name="WingType"
-                value={wingType}
+                value={props.wingType}
                 onChange={(e) => {
-                  setWingType(e.target.value);
-                  props.onTypeCanvas(e.target.value);
+                  props.onWingParamChange("wingType",e.target.value);
                 }}
               >
                 <option value="" disabled>
@@ -52,23 +53,23 @@ const WingCon = (props) => {
             <FeatureCom
               title="Wingspan"
               // InputValue={props.wingSpan}
-              onChange={props.onWingSpanChange}
+              onChange={(value) => props.onWingParamChange("wingSpan",value)}
               maxInput="180"
               step="10"
               unit="cm."
-              disable={wingType == "" ? true : false}
+              disable={props.wingType == "" ? true : false}
+              storedValue={props.wingSpan}
+              content={wingSpan}
             />
             <FeatureCom
               title="Taper Ratio"
               // InputValue={taper}
-              onChange={(T) => {
-                setTaper(T);
-                props.onTaperCanvas(T);
-              }}
+              onChange={(value) => props.onWingParamChange("wingTaper", value)}
               maxInput="1"
               step="0.05"
-              disable={wingType == "Taper" ? false : true}
-              initial={taper}
+              disable={props.wingType == "Taper" ? false : true}
+              storedValue={props.wingTaper}
+              content={taperedRatio}
             />
           </div>
         </div>
@@ -78,9 +79,9 @@ const WingCon = (props) => {
             <span className={styles.Geometry__Chord}>Chord</span>
             <Canvas
               wingArea={props.wingArea}
-              wingType={wingType}
+              wingType={props.wingType}
               wingSpan={props.wingSpan}
-              taper={taper}
+              taper={props.wingTaper}
               canvasPropsChange={props.onCanvasPropsChange}
               />
           </div>

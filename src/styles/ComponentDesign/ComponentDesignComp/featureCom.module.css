@@ -1,10 +1,23 @@
+.Feature__Container_title {
+    display: flex;
+    align-items: center;
+    max-height: 29px;
+    font-family: var(--font-family2);
+}
 
-.Feature__Container_title h3{
+.Wing__Selection_Title h3, .Feature__Container_title h3{
     font-family: var(--font-family3);
     font-weight: 700;
     font-size: 20px;
     line-height: 29px;
+    margin-right: 2.5%;
 }
+
+.Wing__Selection_Title {
+    display: flex;
+    align-items: center;
+}
+
 .Feature__Container_Input {
     display: flex;
     margin: 16px 0;
@@ -15,7 +28,7 @@
     margin-right: 7%;
     width: 60%;
     height: 25px;
-    background-color: var(--color-output);
+    background-color: var(--color-input);
     border-radius: 6px;
     font-family: var(--font-family2);
 }

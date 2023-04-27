@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import CanvasTail from "./CanvasTail";
+import { CanvasTail, QuestionHover } from "../ComponentDesignComp";
 import styles from "../../../styles/ComponentDesign/ComponentDesignComp/tailfeature.module.css";
 
 const TailFeature = (props) => {
@@ -13,7 +13,7 @@ const TailFeature = (props) => {
     }
   }, []);
 
-  // console.log(props.wingSpan, props.MAC);
+  // console.log(props.tailType);
 
   return (
     <div className={styles.Tail__Feature_Container}>
@@ -22,16 +22,19 @@ const TailFeature = (props) => {
         <div className={styles.Tail__Feature_Input}>
           <div className={styles.Tail__Input_Title}>
             <h3>{props.title1}</h3>
-            <img src="./QMark.png" alt="Qmark" />
+            <QuestionHover title={props.content} />
           </div>
           <div className={styles.Tail__Input_1}>
             <input
               type="number"
               placeholder="Input Value"
-              onChange={(e) => props.onTailArmChange(e.target.value)}
+              onChange={(e) => {
+                props.onTailArmChange(parseFloat(e.target.value));
+              }}
               min="0"
               max="100"
               step="10"
+              value={props.tailArm}
             />
             <p>cm.</p>
           </div>
@@ -40,10 +43,13 @@ const TailFeature = (props) => {
             <input
               type="number"
               placeholder="Input Value"
-              onChange={(e) => props.onTailSpanChange(e.target.value)}
+              onChange={(e) => {
+                props.onTailSpanChange(parseFloat(e.target.value));
+              }}
               min="0"
               max="60"
               step="10"
+              value={props.tailSpan}
             />
             <p>cm.</p>
           </div>
@@ -53,15 +59,15 @@ const TailFeature = (props) => {
             <span className={styles.Geometry__Tailspan}>Tailspan</span>
             <span className={styles.Geometry__TailChord}>Chord</span>
             <CanvasTail
-              wingArea = {props.wingArea}
+              wingArea={props.wingArea}
               tailArm={props.tailArm}
               tailType={props.tailType}
               tailSpan={props.tailSpan}
               wingSpan={props.wingSpan}
               MAC={props.MAC}
               onChange={props.onTailPropsChange}
-              />
-            </div>
+            />
+          </div>
         </div>
       </div>
     </div>
