@@ -1,10 +1,11 @@
 import { ReportProblemSharp } from '@mui/icons-material';
 import {Result_Cons} from './Result_Cons'
 import React, {useState, useEffect} from 'react';
-
-import Plot from 'react-plotly.js';
+import dynamic from 'next/dynamic';
 
 function Graph_Cons(props) {
+  //dynamic 
+  const Plot=dynamic(()=> import('react-plotly.js'),{ssr:false})
   //assign the variable
   const [WS, setWS] = useState(Array.from({ length: 5000 }, (_, i) => i/ 100 * 0.1));
   const [parameter, setParameter] = useState({

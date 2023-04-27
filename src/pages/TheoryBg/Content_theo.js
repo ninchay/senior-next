@@ -1,9 +1,9 @@
 import styles from "../../styles/TheoryBg/Content.module.css";
 import { HiMinus, HiPlus } from "react-icons/Hi";
 import { useState } from "react";
-import { Equation } from "react-equation";
+import { Equation } from "react-equation";                                
 
-const renderEquation = (symbol, description) => {
+const renderEquation = (symbol, description) =>{
   return (
     <div>
       <Equation value={symbol} /> = {description}
