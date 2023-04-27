@@ -4,6 +4,7 @@
     margin-bottom: 5vh;
     position: relative;
     flex-direction: column;
+    width: 95%;
     /* gap: 200px; */
 
 }
