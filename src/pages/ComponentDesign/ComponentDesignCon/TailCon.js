@@ -2,7 +2,7 @@ import {
   ResultCom,
   TailFeature,
 } from "../../../../src";
-import {HorizontalArm, VerticalArm} from "../../../Content"
+import {HorizontalArm, VerticalArm} from "../ComponentDesignComp/Article/Content"
 import styles from "../../../styles/ComponentDesign/ComponentDesignCon/tailCon.module.css";
 import React from "react";
 
