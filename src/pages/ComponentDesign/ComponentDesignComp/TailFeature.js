@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { CanvasTail, QuestionHover } from "../ComponentDesignComp";
+import { CanvasTail, QuestionHover } from "../../../index";
 import styles from "../../../styles/ComponentDesign/ComponentDesignComp/tailfeature.module.css";
 
 const TailFeature = (props) => {

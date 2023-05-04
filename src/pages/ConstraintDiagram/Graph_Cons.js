@@ -1,5 +1,5 @@
 import { ReportProblemSharp } from '@mui/icons-material';
-import {Result_Cons} from './Result_Cons'
+import {Result_Cons} from '../../index'
 import React, {useState, useEffect} from 'react';
 import dynamic from 'next/dynamic';
 

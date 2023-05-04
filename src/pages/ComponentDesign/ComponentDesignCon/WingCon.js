@@ -1,8 +1,8 @@
-import { Canvas, FeatureCom, QuestionHover } from "../ComponentDesignComp";
-import { ResultCom } from "../ComponentDesignComp";
+import { Canvas, FeatureCom, QuestionHover } from "../../../index";
+import { ResultCom } from "../../../index";
 import { useEffect, useState } from "react";
 import styles from "../../../styles/ComponentDesign/ComponentDesignCon/wingCon.module.css";
-import {wingArea, wingType, wingSpan, taperedRatio} from "../ComponentDesignComp/Article/Content"
+import {wingArea, wingType, wingSpan, taperedRatio} from "../../../index"
 
 const WingCon = (props) => {
 
