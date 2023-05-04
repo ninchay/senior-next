@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import styles from "../../../styles/ComponentDesign/ComponentDesignCon/fuselageCon.module.css";
-import { QuestionHover, ResultCom } from "../ComponentDesignComp";
-import { fuselageLength } from "../ComponentDesignComp/Article/Content";
+import { QuestionHover, ResultCom } from "../../../index";
+import { fuselageLength } from "../../../index";
 
 const FuselageCon = (props) => {
   const {onFuseChange} = props

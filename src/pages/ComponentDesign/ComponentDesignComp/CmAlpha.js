@@ -3,7 +3,7 @@ import styles from "../../../styles/ComponentDesign/ComponentDesignComp/CmAlpha.
 import { Equation } from "react-equation";
 import CancelIcon from "@mui/icons-material/Cancel";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { QuestionHover } from "../ComponentDesignComp";
+import { QuestionHover } from "./QuestionHover";
 
 const CmAlpha = (props) => {
   // react hook
