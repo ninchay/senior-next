@@ -63,22 +63,23 @@ function Graph_Cons(props) {
     (WS) => WS_LDSL
   )
 
+
+
   //roc
   const CL_ROC = WS.map((WS) => WS / (0.5 * rhoCruise * (props.velocity*unitMap["velocity"][props.unit]) ** 2));
   const LD_ROC = CL_ROC.map((cl) => cl / (parameter.cd_clean + (K * cl**2)));
-  const PW_roc =  LD_ROC.map((ld)=>(Number(props.roc*unitMap["roc"][props.roc]) + Number(((props.velocity*unitMap["velocity"][props.unit]) / ld)))*(745.7/550))
-
+  const PW_roc =  LD_ROC.map((ld)=>(Number(props.roc*unitMap["roc"][props.unit]) + Number(((props.velocity*unitMap["velocity"][props.unit]) / ld)))*(745.7/550))
 // (props.roc +(props.velocity / ld))*(745.7/550))
   //turn 
   const n = 1 / Math.cos(props.BAngle*Math.PI/180);
   const PW_turn = WS.map(
     (WS) =>
       (((0.5 * rhoCruise * (props.velocity*unitMap["velocity"][props.unit])**2 * parameter.cd_clean) / WS) + ( (n**2 * K * WS) /(0.5*rhoCruise* (props.velocity*unitMap["velocity"][props.unit])**2))) * (props.velocity*unitMap["velocity"][props.unit]) * 745.7 / 550);
-
 //
   const PW_Cruise = WS.map(
     (WS) =>
     (((0.5 * rhoCruise * (props.velocity*unitMap["velocity"][props.unit])**2 * parameter.cd_clean) / WS) + ( (K * WS) /(0.5*rhoCruise* (props.velocity*unitMap["velocity"][props.unit])**2))) * (props.velocity*unitMap["velocity"][props.unit]) * 745.7 / 550);
+console.log(WS_LDSL_array)
 
 // function handleChange(value, key) {
 //   setParameter(prevState => ({
@@ -109,7 +110,7 @@ function Graph_Cons(props) {
 // const [clickedPoint, setClickedPoint] = useState(null);
 
 // const handlePlotClick = (event) => {
-//   if (event.points.length > 0) {
+//   if (event.points.length > 0)4
 //     const point = event.points[0];
 //     const x = point.x.toFixed(2);
 //     const y = point.y.toFixed(2);
@@ -130,6 +131,7 @@ function Graph_Cons(props) {
             name: 'Cruise',
             hoverinfo: 'all',
             hovertemplate: 'x: %{x}<br>y: %{y}',
+            colorbar:'blue'
           },
           {
             x: WS,
@@ -163,9 +165,8 @@ function Graph_Cons(props) {
           },
           {
             x: WS_LDSL_array,
-            type: 'scatter',
-            mode: 'lines',
-            fill: 'tozeroy',
+            type: 'line',
+            fill: 'tonextx',
             name: 'Landing',
             hoverinfo: 'all',
             hovertemplate: 'x: %{x}<br>y: %{y}',

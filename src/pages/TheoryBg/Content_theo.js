@@ -34,13 +34,13 @@ const Content_theo = ({
               <div className={styles.title}>{title}</div>
               <div className={styles.toggle}>
                 {selected ? (
-                  <HiMinus
+                  <HiMinus className={styles.plusMinus}
                     color="#000"
                     size={35}
                     onClick={() => setSelected(false)}
                   />
                 ) : (
-                  <HiPlus
+                  <HiPlus className={styles.plusMinus}
                     color="#000"
                     size={35}
                     onClick={() => setSelected(true)}

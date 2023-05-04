@@ -52,13 +52,13 @@ const Input_Cons = (props) => {
               <div className={styles.questionHover}>
                 <div className={styles.inputTitle}>
                   Estimated Overall Weight
+                </div>
                   <QuestionHover
                     title="
                 The overall weight of the aircraft in this section is an estimation, further calculation is needed for the preliminary design.
                 The overall weight of the RC aircraft nomrally falls between 5-8 kg.
                 "
                   />
-                </div>
               </div>
               <div className={styles.inputSection}>
                 <input
@@ -78,7 +78,12 @@ const Input_Cons = (props) => {
                 </p>
               </div>
 
+              <div className={styles.questionHover}>
               <div className={styles.inputTitle}>Desired Velocity</div>
+              <QuestionHover 
+              title="The maximum velocity for RC aircraft depends on the motor, which is normally around 70 ft/s or 21 m/s"
+              />
+              </div>
               <div className={styles.inputSection}>
                 <input
                   className={styles.velocity}
@@ -100,10 +105,16 @@ const Input_Cons = (props) => {
           </div>
 
           <div className={styles.sub_container2}>
-            <div className={styles.header2}>
-              <b>Terrain</b>
+              <div className={styles.header2}>
+                <b>Terrain</b>
+              </div>
+            <div className={styles.questionHover}>
+              <div className={styles.inputTitle}>Cruising Altitude</div>
+            <QuestionHover title="
+            Flying at high altitudes allows for faster speeds and reduces the amount of turbulence that the aircraft encounters.
+            However, the RC aircraft typically flys between 100 ft to around 1,000 ft (30m to 300m)"
+            />
             </div>
-            <div className={styles.inputTitle}>Cruising Altitude</div>
             <div className={styles.inputSection}>
               <input
                 className={styles.altitude}
@@ -121,7 +132,13 @@ const Input_Cons = (props) => {
                 )}
               </p>
             </div>
-            <div className={styles.inputTitle}>Takeoff Runway Length</div>
+            <div className={styles.questionHover}>
+              <div className={styles.inputTitle}>Takeoff Runway Length</div>
+              <QuestionHover title="
+              This refers to the distance required for an aircraft to accelerate from a stationary position to a speed that enables it to lift off the ground safely. 
+              The takeoff runway length of an RC aircraft, typically around 70ft (21m), is crucial for a successful flight.
+              "/>
+            </div>
             <div className={styles.inputSection}>
               <input
                 className={styles.torw}
@@ -145,7 +162,12 @@ const Input_Cons = (props) => {
             <div className={styles.header3}>
               <b>Performance</b>
             </div>
-            <div className={styles.inputTitle}>Rate of Climb</div>
+            <div className={styles.questionHover}>
+              <div className={styles.inputTitle}>Rate of Climb</div>
+              <QuestionHover  title= "
+              The rate of climb of RC aircraft is around 12 ft/s or 4 m/s. It is an important performance characteristic of an RC aircraft, as it can affect its ability to clear obstacles and execute certain maneuvers."
+              />
+            </div>
             <div className={styles.inputSection}>
               <input
                 className={styles.roc}

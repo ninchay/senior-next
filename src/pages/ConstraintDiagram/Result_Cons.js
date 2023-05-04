@@ -23,7 +23,7 @@ const Result_Cons = (props) => {
   const powerReq = powerReq1.toFixed(3);
   const wingArea = wingArea1.toFixed(3);
   const clCruise = clCruise1.toFixed(3);
-  console.log("power required", props.pwValue * unitMap["powerW"][props.unit]);
+
   return (
     <div className={styles.result_summary}>
       <div className={styles.header_result}>

@@ -5,7 +5,7 @@ const FooterHome = () => {
   return (
     <div className={styles.Home__Footer_container}>
         <div className={styles.Home__Footer_container_quote}>
-          <p>Let's begin designing your<br/>own aircraft !</p>
+          <p>{`Let's begin designing your`}<br/>own aircraft !</p>
         </div>
         <div className={styles.Footer_Content}>
           <div className={styles.Footer__Title}>

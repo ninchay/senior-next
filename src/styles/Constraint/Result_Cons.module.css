@@ -64,7 +64,7 @@
   justify-content: center;
   margin-top: 0.7rem;
   padding: 1rem;
-  background-color: yellowgreen;
+  background-color: var(--color-output);
   border-radius: 0.4rem;
   height: 1rem;
   width: 2.5rem;

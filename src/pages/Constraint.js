@@ -4,6 +4,7 @@ import {
   Result_Cons,
   Graph_Cons,
   Header_Cons,
+  Note,
 } from "./ConstraintDiagram";
 import { FooterHome } from "./HomePage/HomePageCon";
 import styles from "../styles/Constraint/Constraint.module.css";
@@ -98,6 +99,7 @@ const Constraint = () => {
             velocity={velocity}
             rhoCruise={rhoCruise}
           />
+          <Note/>
           <FooterHome />
         </div>
       </div>
