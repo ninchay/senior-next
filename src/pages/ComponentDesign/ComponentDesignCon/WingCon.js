@@ -2,7 +2,7 @@ import { Canvas, FeatureCom, QuestionHover } from "../../../../src";
 import { ResultCom } from "../../../../src";
 import { useEffect, useState } from "react";
 import styles from "../../../styles/ComponentDesign/ComponentDesignCon/wingCon.module.css";
-import {wingArea, wingType, wingSpan, taperedRatio} from "../ComponentDesignComp/Article/Content"
+import {wingArea, wingType, wingSpan, taperedRatio} from "../../../Content"
 
 const WingCon = (props) => {
 
