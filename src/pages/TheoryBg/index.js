@@ -1,7 +1,0 @@
-export {default as Navbar_theo} from './Navbar_theo'
-export {default as Content_theo} from './Content_theo'
-export {default as AboutRC} from './AboutRC'
-export {default as Constraint_theo} from './Constraint_theo'
-export {default as BasicPrinciple} from './BasicPrinciple'
-export {default as Aerodynamics} from './Aerodynamics'
-export {default as Component} from './Component'

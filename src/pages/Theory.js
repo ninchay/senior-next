@@ -1,4 +1,4 @@
-import { Navbar_theo, Content_theo, AboutRC, BasicPrinciple,Aerodynamics, Component, FeatureComponent } from './TheoryBg'
+import { Navbar_theo, Content_theo, AboutRC, BasicPrinciple,Aerodynamics, Component, FeatureComponent } from '..'
 import styles from '../styles/TheoryBg/Theory.module.css'
 
 const Theory = () => {

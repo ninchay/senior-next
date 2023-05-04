@@ -1,6 +1,0 @@
-export {default as FooterCon} from './FooterCon'
-export {default as FuselageCon} from './FuselageCon'
-export {default as HeaderCon} from './HeaderCon'
-export {default as TailCon} from './TailCon'
-export {default as WingCon} from './WingCon'
-export {default as CombinationCon} from './CombinationCon'
