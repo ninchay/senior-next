@@ -1,8 +1,7 @@
 import { useState } from "react";
 import styles from "../../styles/TheoryBg/Component.module.css";
 import { Equation } from "react-equation";
-import { HiMinus, HiPlus } from "react-icons/Hi";
-
+import { HiMinus, HiPlus } from "react-icons/hi";
 
 const Component = () => {
   const [describtion, setDescribtion] = useState(false);

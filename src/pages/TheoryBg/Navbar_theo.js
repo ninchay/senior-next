@@ -1,6 +1,6 @@
 import {RiMenu2Line, RiCloseLine} from "react-icons/ri";
 import React, {useState} from 'react'
-import Link from 'next/Link';
+import Link from 'next/link';
 import styles from '../../styles/TheoryBg/Navbar.module.css'
 
 const Menu = () => (
