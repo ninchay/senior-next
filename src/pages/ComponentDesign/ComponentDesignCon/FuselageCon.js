@@ -4,6 +4,7 @@ import { QuestionHover, ResultCom } from "../../../../src";
 import { fuselageLength } from "../ComponentDesignComp/Article/Content";
 
 const FuselageCon = (props) => {
+
   const {onFuseChange} = props
   const FuseL =
     (1.75 * props.chordM) / 3 + Number(props.tailArm) + 100*props.hTailChord ;

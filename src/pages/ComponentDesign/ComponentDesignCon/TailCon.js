@@ -1,8 +1,8 @@
 import {
   ResultCom,
   TailFeature,
-} from "../../../index";
-import {HorizontalArm, VerticalArm} from "../../../index"
+} from "../../../../src";
+import {HorizontalArm, VerticalArm} from "../ComponentDesignComp/Article/Content"
 import styles from "../../../styles/ComponentDesign/ComponentDesignCon/tailCon.module.css";
 import React from "react";
 
