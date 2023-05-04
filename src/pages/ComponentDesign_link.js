@@ -5,8 +5,8 @@ import {
   HeaderCon,
   TailCon,
   WingCon,
-} from "./ComponentDesign/ComponentDesignCon";
-import { NavbarCom, CmAlpha } from "./ComponentDesign/ComponentDesignComp";
+} from "../index";
+import { NavbarCom, CmAlpha } from "../index";
 import styles from "../styles/ComponentDesign/ComponentDesign.module.css";
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";

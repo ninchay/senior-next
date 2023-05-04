@@ -5,8 +5,8 @@ import {
   Graph_Cons,
   Header_Cons,
   Note,
-} from "./ConstraintDiagram";
-import { FooterHome } from "./HomePage/HomePageCon";
+} from "../index";
+import { FooterHome } from "../index";
 import styles from "../styles/Constraint/Constraint.module.css";
 import React, { useState, useEffect } from "react";
 
