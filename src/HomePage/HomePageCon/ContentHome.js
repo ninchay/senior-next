@@ -1,4 +1,4 @@
-import styles from '../../../styles/HomePage/HomePageCon/contentHome.module.css';
+import styles from '../../styles/HomePage/HomePageCon/contentHome.module.css';
 import Link from 'next/link';
 
 const ContentHome = () => {

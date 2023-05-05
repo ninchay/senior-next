@@ -1,5 +1,3 @@
-import { ReportProblemSharp } from '@mui/icons-material';
-import {Result_Cons} from '../../index'
 import React, {useState, useEffect} from 'react';
 import dynamic from 'next/dynamic';
 
@@ -59,12 +57,18 @@ function Graph_Cons(props) {
   const Va = Math.sqrt((props.torw*unitMap["torw"][props.unit]) / (0.3 * 0.6));
   const V_STALLL = (Va * 1.68781) / 1.3; //change from knot to ft/s
   const WS_LDSL = (V_STALLL**2 * rhoCruise * parameter.Cl_max) / 2;
-  const WS_LDSL_array = WS.map(
+  let WS_LDSL_array = WS.map(
     (WS) => WS_LDSL
-  )
+  );
+  const last_WS_LDSL=WS_LDSL_array[WS_LDSL_array.length - 1];
+  const new_last_WS_LDSL = last_WS_LDSL * 10;
+  
+  WS_LDSL_array[WS_LDSL_array.length-1] = new_last_WS_LDSL;
+  if (WS_LDSL == 0) {
+    WS_LDSL_array=null
+  }
 
-
-
+console.log(WS_LDSL_array)
   //roc
   const CL_ROC = WS.map((WS) => WS / (0.5 * rhoCruise * (props.velocity*unitMap["velocity"][props.unit]) ** 2));
   const LD_ROC = CL_ROC.map((cl) => cl / (parameter.cd_clean + (K * cl**2)));
@@ -79,7 +83,6 @@ function Graph_Cons(props) {
   const PW_Cruise = WS.map(
     (WS) =>
     (((0.5 * rhoCruise * (props.velocity*unitMap["velocity"][props.unit])**2 * parameter.cd_clean) / WS) + ( (K * WS) /(0.5*rhoCruise* (props.velocity*unitMap["velocity"][props.unit])**2))) * (props.velocity*unitMap["velocity"][props.unit]) * 745.7 / 550);
-console.log(WS_LDSL_array)
 
 // function handleChange(value, key) {
 //   setParameter(prevState => ({
@@ -166,7 +169,7 @@ console.log(WS_LDSL_array)
           {
             x: WS_LDSL_array,
             type: 'line',
-            fill: 'tonextx',
+            fill: 'tozeroy',
             name: 'Landing',
             hoverinfo: 'all',
             hovertemplate: 'x: %{x}<br>y: %{y}',
@@ -178,10 +181,12 @@ console.log(WS_LDSL_array)
         title:"Constraint Diagram",
         xaxis: {
           range: [0, 5],
+          autorange:false,
           title: "Wing Loading",
         },
         yaxis: {
           range: [0, 150],
+          autorange:false,
           title:"Power-to-Weight",
         },
         hoverinfo: 'all',

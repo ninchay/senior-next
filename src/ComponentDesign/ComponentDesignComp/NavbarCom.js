@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {RiMenu2Line, RiCloseLine} from 'react-icons/ri';
 import Link from 'next/link';
 
-import styles from '../../../styles/ComponentDesign/ComponentDesignComp/navbarCom.module.css'
+import styles from '../../styles/ComponentDesign/ComponentDesignComp/navbarCom.module.css'
 
 const Menu = () => (
   <>

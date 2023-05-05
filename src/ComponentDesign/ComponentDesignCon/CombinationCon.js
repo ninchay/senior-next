@@ -1,6 +1,6 @@
 import {React,useEffect,useRef,useState} from 'react'
-import styles from '../../../styles/ComponentDesign/ComponentDesignCon/combinationCon.module.css'
-import { CombinationTop, CombinationSide } from '../../../index';
+import styles from '../../styles/ComponentDesign/ComponentDesignCon/combinationCon.module.css'
+import { CombinationTop, CombinationSide } from '../../index';
 
 const CombinationCon = (props) => {
 

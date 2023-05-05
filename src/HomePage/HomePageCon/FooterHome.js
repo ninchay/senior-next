@@ -1,4 +1,4 @@
-import styles from '../../../styles/HomePage/HomePageCon/footerHome.module.css';
+import styles from '../../styles/HomePage/HomePageCon/footerHome.module.css';
 import {FaFacebookF, FaLinkedinIn} from 'react-icons/fa'
 
 const FooterHome = () => {

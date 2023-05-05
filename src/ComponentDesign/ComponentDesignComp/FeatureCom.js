@@ -1,5 +1,5 @@
-import styles from "../../../styles/ComponentDesign/ComponentDesignComp/featureCom.module.css";
-import { QuestionHover } from "../../../index";
+import styles from '../../styles/ComponentDesign/ComponentDesignComp/featureCom.module.css';
+import { QuestionHover } from "../../index";
 
 const FeatureCom = ({
   title,

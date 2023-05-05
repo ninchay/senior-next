@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import {AiFillQuestionCircle} from 'react-icons/ai';
-import styles from '../../../styles/ComponentDesign/ComponentDesignComp/questionHover.module.css'
+import styles from '../../styles/ComponentDesign/ComponentDesignComp/questionHover.module.css'
 
 const QuestionHover = (props) => {
     const [showComponent, setShowComponent] = useState(false);

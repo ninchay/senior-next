@@ -1,9 +1,9 @@
 import {
   ResultCom,
   TailFeature,
-} from "../../../../src";
+} from "../../index";
 import {HorizontalArm, VerticalArm} from "../ComponentDesignComp/Article/Content"
-import styles from "../../../styles/ComponentDesign/ComponentDesignCon/tailCon.module.css";
+import styles from "../styles/ComponentDesign/ComponentDesignCon/tailCon.module.css";
 import React from "react";
 
 const TailCon = (props) => {

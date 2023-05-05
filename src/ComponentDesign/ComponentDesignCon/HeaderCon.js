@@ -1,4 +1,4 @@
-import styles from '../../../styles/ComponentDesign/ComponentDesignCon/headerCon.module.css'
+import styles from '../../styles/ComponentDesign/ComponentDesignCon/headerCon.module.css'
 
 const HeaderCon = () => {
   return (

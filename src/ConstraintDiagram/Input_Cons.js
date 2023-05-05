@@ -1,8 +1,7 @@
-import { Equalizer } from "@mui/icons-material";
 import styles from "../../styles/Constraint/Input_Cons.module.css";
 import { useEffect, useState } from "react";
 import { Equation } from "react-equation";
-import { QuestionHover } from "../../index";
+import { QuestionHover } from "../ComponentDesign/ComponentDesignComp/QuestionHover";
 const Input_Cons = (props) => {
   // const [weight, setWeight] = useState("");
   // const [isTrue, setIsTrue] = useState("2"); // set initial value to Imperial

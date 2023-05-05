@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import styles from "../../../styles/ComponentDesign/ComponentDesignCon/fuselageCon.module.css";
-import { QuestionHover, ResultCom } from "../../../../src";
-import { fuselageLength } from "../ComponentDesignComp/Article/Content";
+import styles from '../../styles/ComponentDesign/ComponentDesignCon/fuselageCon.module.css';
+import { QuestionHover, ResultCom } from "../../index";
+import { fuselageLength } from '../ComponentDesignComp/Article/Content'
 
 const FuselageCon = (props) => {
 

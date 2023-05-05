@@ -1,9 +1,8 @@
 import { useState } from "react";
-import styles from "../../../styles/ComponentDesign/ComponentDesignComp/CmAlpha.module.css";
-import { Equation } from "react-equation";
+import styles from '../../styles/ComponentDesign/ComponentDesignComp/CmAlpha.module.css'
 import CancelIcon from "@mui/icons-material/Cancel";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { QuestionHover } from "../../../index";
+import { QuestionHover } from "../../index";
 
 const CmAlpha = (props) => {
   // react hook

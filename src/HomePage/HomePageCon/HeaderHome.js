@@ -1,5 +1,4 @@
-
-import styles from '../../../styles/HomePage/HomePageCon/headerHome.module.css'
+import styles from '../../styles/HomePage/HomePageCon/headerHome.module.css'
 
 const HeaderHome = () => {
   return (

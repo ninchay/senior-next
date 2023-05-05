@@ -1,4 +1,4 @@
-import styles from '../../../styles/ComponentDesign/ComponentDesignCon/footerCon.module.css';
+import styles from '../../styles/ComponentDesign/ComponentDesignCon/footerCon.module.css';
 import {FaFacebookF, FaLinkedinIn} from 'react-icons/fa'
 
 const FooterCon = () => {

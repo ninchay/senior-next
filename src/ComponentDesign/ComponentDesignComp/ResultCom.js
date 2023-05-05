@@ -1,4 +1,4 @@
-import styles from '../../../styles/ComponentDesign/ComponentDesignComp/resultCom.module.css'
+import styles from '../../styles/ComponentDesign/ComponentDesignComp/resultCom.module.css'
 
 const ResultCom = (props) => {
   return (
