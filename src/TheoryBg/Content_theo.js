@@ -1,4 +1,4 @@
-import styles from "../../styles/TheoryBg/Content.module.css";
+import styles from "../styles/TheoryBg/Content.module.css";
 import { HiMinus, HiPlus } from "react-icons/hi";
 import { useState } from "react";
 import { Equation } from "react-equation";                                

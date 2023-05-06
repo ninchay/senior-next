@@ -1,6 +1,6 @@
 import React from 'react'
-import { Header_Cons } from '../../index'
-import styles from '../../styles/TheoryBg/aboutRC.module.css'
+import { Header_Cons } from '../index'
+import styles from '../styles/TheoryBg/aboutRC.module.css'
 
 const AboutRC = () => {
 

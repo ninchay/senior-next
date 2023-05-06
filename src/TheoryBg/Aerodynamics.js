@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../styles/TheoryBg/Aerodynamics.module.css'
+import styles from '../styles/TheoryBg/Aerodynamics.module.css'
 
 const Aerodynamics = () => {
   return (

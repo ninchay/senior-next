@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../../styles/TheoryBg/Component.module.css";
+import styles from "../styles/TheoryBg/Component.module.css";
 import { Equation } from "react-equation";
 import { HiMinus, HiPlus } from "react-icons/hi";
 

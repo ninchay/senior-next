@@ -1,4 +1,4 @@
-import styles from '../../styles/Constraint/Navbar_Cons.module.css'
+import styles from '../styles/Constraint/Navbar_Cons.module.css'
 import {RiMenu2Line, RiCloseLine} from "react-icons/ri";
 import React, {useState} from 'react'
 import Link from 'next/link'

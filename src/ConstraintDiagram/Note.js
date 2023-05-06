@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../styles/Constraint/Note.module.css";
+import styles from '../styles/Constraint/Note.module.css';
 
 const Note = () => {
   return (

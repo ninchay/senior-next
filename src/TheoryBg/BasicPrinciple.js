@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../styles/TheoryBg/BasicPrinciple.module.css'
+import styles from '../styles/TheoryBg/BasicPrinciple.module.css'
 
 const BasicPrinciple = () => {
   return (

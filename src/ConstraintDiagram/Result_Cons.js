@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../../styles/Constraint/Result_Cons.module.css";
+import styles from "../styles/Constraint/Result_Cons.module.css";
 import { Equation } from "react-equation";
 
 const Result_Cons = (props) => {
