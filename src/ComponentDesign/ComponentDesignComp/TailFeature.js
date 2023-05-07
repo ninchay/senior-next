@@ -56,8 +56,8 @@ const TailFeature = (props) => {
         </div>
         <div className={styles.Tail__Feature_Geometry} ref={illustBox}>
           <div className={styles.Geometry__Canvas}>
-            <span className={styles.Geometry__Tailspan}>Tailspan</span>
-            <span className={styles.Geometry__TailChord}>Chord</span>
+            <span className={styles.Geometry__Tailspan}>{props.canvasTop}</span>
+            <span className={styles.Geometry__TailChord}>{props.canvasBottom}</span>
             <CanvasTail
               wingArea={props.wingArea}
               tailArm={props.tailArm}

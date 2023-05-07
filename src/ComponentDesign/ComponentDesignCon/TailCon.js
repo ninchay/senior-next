@@ -23,6 +23,8 @@ const TailCon = (props) => {
             title1="Tail Moment Arm"
             title2="Horizontal Tail Span"
             tailType="Horizontal"
+            canvasTop = "Tailspan"
+            canvasBottom = "Chord"
             wingArea={props.wingArea}
             MAC={props.chordM}
             tailArm={props.hTailArm}
@@ -39,6 +41,8 @@ const TailCon = (props) => {
             title1="Tail Moment Arm"
             title2="Vertical Tail Span"
             tailType="Vertical"
+            canvasTop = "Chord"
+            canvasBottom = "Tailspan"
             wingArea={props.wingArea}
             wingSpan={props.wingSpan}
             tailArm={props.vTailArm}

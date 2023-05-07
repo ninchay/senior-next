@@ -5,8 +5,8 @@ import styles from '../styles/TheoryBg/Navbar.module.css'
 
 const Menu = () => (
     <>
-    <p><Link href="/">Home</Link></p>
-    <p><Link href="/ComponentDesign_link">Component Design</Link></p>
+    <p><Link href="/">Home</Link></p><br />
+    <p><Link href="/ComponentDesign_link">Component Design</Link></p><br />
     <p><Link href="/Constraint">Constraint Diagram</Link></p>
     </>
 )

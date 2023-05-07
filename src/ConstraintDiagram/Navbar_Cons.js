@@ -5,8 +5,8 @@ import Link from 'next/link'
 
 const Menu = () => (
   <>
-  <p><Link href="/">Home</Link></p>
-  <p><Link href="/ComponentDesign_link">Component Design</Link></p>
+  <p><Link href="/">Home</Link></p><br />
+  <p><Link href="/ComponentDesign_link">Component Design</Link></p><br />
   <p><Link href="/Theory">Theoretical Background</Link></p>
   </>
 )
