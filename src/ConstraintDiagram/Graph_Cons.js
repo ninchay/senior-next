@@ -182,12 +182,12 @@ console.log(WS_LDSL_array)
         xaxis: {
           range: [0, 5],
           autorange:false,
-          title: "Wing Loading",
+          title: "Wing Loading [lbf/ft^2]",
         },
         yaxis: {
           range: [0, 150],
           autorange:false,
-          title:"Power-to-Weight",
+          title:"Power-to-Weight [Watt/lbf]",
         },
         hoverinfo: 'all',
         hovertemplate: 'x: %{x}<br>y: %{y}',
