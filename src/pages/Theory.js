@@ -1,4 +1,4 @@
-import { Navbar_theo, Content_theo, AboutRC, BasicPrinciple,Aerodynamics, Component, FeatureComponent } from '../index'
+import { Navbar_theo, Content_theo, AboutRC, BasicPrinciple,Aerodynamics, Component, FooterCon } from '../index'
 import styles from '../styles/TheoryBg/Theory.module.css'
 
 const Theory = () => {
@@ -111,6 +111,7 @@ const variableListCruise = [
     />
 
     <Component />
+    <FooterCon />
   </div>
 </>  
   )

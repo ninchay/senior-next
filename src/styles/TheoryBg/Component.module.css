@@ -1,4 +1,6 @@
-
+.component {
+    padding:3rem 0;
+}
 .title {
     display: flex;
     font-family: var(--font-family);
@@ -22,7 +24,7 @@
 .wingSub{
     font-size: 20px;
     margin-inline: 10rem;
-    padding: 3rem;
+    padding: 1rem 3rem;
     background: #F9F9F9;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
@@ -50,5 +52,18 @@
     border-radius: 20px;
     width: 50%;
     margin-top: 5rem;
+    padding: 1rem;
+}
+
+.tailToggle, .fuseToggle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #F9F9F9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    width: 50%;
+    margin-top: 2rem;
     padding: 1rem;
 }
