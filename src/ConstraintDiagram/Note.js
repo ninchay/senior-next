@@ -23,14 +23,14 @@ const Note = () => {
         </div>
         <div className={styles.describtion}>
           <p>
-            The most preferable point is high wing loading and low power to
+            The most preferable point is high wing loading (weight-to-wing area) and low power to
             weight ratio
           </p>
         </div>
         <div className={styles.describtion}>
           <p>
             Since the motor is expensive, it is better to choose the lower power
-            to save the cost. Also, the weight of aircraft should heavier than
+            to save the cost. Also, the weight of aircraft isexpected to be heavier than
             the estimated value due to manufacturing process (glue and etc.)
           </p>
         </div>

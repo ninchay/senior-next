@@ -84,42 +84,6 @@ console.log(WS_LDSL_array)
     (WS) =>
     (((0.5 * rhoCruise * (props.velocity*unitMap["velocity"][props.unit])**2 * parameter.cd_clean) / WS) + ( (K * WS) /(0.5*rhoCruise* (props.velocity*unitMap["velocity"][props.unit])**2))) * (props.velocity*unitMap["velocity"][props.unit]) * 745.7 / 550);
 
-// function handleChange(value, key) {
-//   setParameter(prevState => ({
-//     ...prevState,
-//     [key]: value
-//   }))
-// }
-
-// const handleDataClick = (data) => {
-//   if (data.points.length > 0) {
-//     const point = data.points[0];
-//     const pw = point.x;
-//     const wl = point.y;
-//     setPowerToWeight(pw.toFixed(2));
-//     setWingLoading(wl.toFixed(2));
-//     props.onDataClick(pw.toFixed(2), wl.toFixed(2));
-//   }
-// };
-
-// const [powerToWeight, setPowerToWeight] = useState(null)
-// const [wingLoading, setWingLoading] = useState(null)
-// const handleDataClick = (event) => {
-//   onclick(x,y);
-//   const {x, y} = event.point;
-//   console.log(`Clicked on (${x}, ${y})`);
-//   setIntersection(`(${x}, ${y})`);
-// }
-// const [clickedPoint, setClickedPoint] = useState(null);
-
-// const handlePlotClick = (event) => {
-//   if (event.points.length > 0)4
-//     const point = event.points[0];
-//     const x = point.x.toFixed(2);
-//     const y = point.y.toFixed(2);
-//     const text = `Clicked point: (${x}, ${y})`;
-//   }
-// };
   return (
 <>
     <div className="Graph">

@@ -29,7 +29,7 @@ const Input_Cons = (props) => {
                   <QuestionHover
                     title="
                 The overall weight of the aircraft in this section is an estimation, further calculation is needed for the preliminary design.
-                The overall weight of the RC aircraft nomrally falls between 5-8 kg.
+                The overall weight of the RC aircraft normally falls between 5-8 kg (11-18 lb).
                 "
                   />
               </div>
@@ -63,8 +63,9 @@ const Input_Cons = (props) => {
                   className={styles.velocity}
                   type="number"
                   placeholder="Input Value"
+                  max="100"
                   onChange={(e) => {
-                    props.handleVelocityChange(e.target.value, "velocity");
+                    props.handleVelocityChange(parseFloat(e.target.value))
                   }}
                   value = {props.velocity}
                   />
@@ -73,7 +74,7 @@ const Input_Cons = (props) => {
                     <Equation value="ft/s" />
                   ) : (
                     <Equation value="m/s" />
-                  )}
+                  )}33  91
                 </p>
               </div>
             </div>
