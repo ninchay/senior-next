@@ -9,6 +9,7 @@ import {
 import { FooterHome } from "../index";
 import styles from "../styles/Constraint/Constraint.module.css";
 import React, { useState, useEffect } from "react";
+import Cookies from "js-cookie";
 
 const Constraint = () => {
   const [weight, setWeight] = useState("");
@@ -20,6 +21,34 @@ const Constraint = () => {
   const [pwValue, setPwValue] = useState("");
   const [wSValue, setWsValue] = useState("");
   const [rhoCruise, setRhoCruise] = useState("");
+
+  useEffect(() => {
+
+    const storedWeight = Cookies.get("weight");
+    if (storedWeight) {
+      setWeight(storedWeight);
+    }
+    const storedVelocity = Cookies.get("velocity");
+    if (storedVelocity) {
+      setVelocity(storedVelocity);
+    }
+    const storedAltitude = Cookies.get("altitude");
+    if (storedAltitude) {
+      setAltitude(storedAltitude);
+    }
+    const storedROC = Cookies.get("roc");
+    if (storedROC) {
+      setROC(storedROC);
+    }
+    const storedTORW = Cookies.get("torw");
+    if (storedTORW) {
+      setTORW(storedTORW);
+    }
+    const storedBAngle= Cookies.get("BAngle");
+    if (storedBAngle) {
+      setBAngle(storedBAngle);
+    }
+  }, []);
 
   const handlePWChange = (PW) => {
     setPwValue(PW);
@@ -58,23 +87,34 @@ const Constraint = () => {
             weight={weight}
             handleWeightChange={(weight) => {
               setWeight(weight);
+              Cookies.set("weight", weight, { expires: 1 / (24 * 60) });
             }}
 
             handleVelocityChange={(velocity) => {
               setVelocity(velocity);
+              Cookies.set("velocity", velocity, { expires: 1 / (24 * 60) });
             }}
             handleAltitudeChange={(altitude) => {
               setAltitude(altitude);
+              Cookies.set("altitude", altitude, { expires: 1 / (24 * 60) });
             }}
             handleROCChange={(roc) => {
               setROC(roc);
+              Cookies.set("roc", roc, { expires: 1 / (24 * 60) });
             }}
             handleTORWChange={(torw) => {
               setTORW(torw);
+              Cookies.set("torw", torw, { expires: 1 / (24 * 60) });
             }}
             handleBAngleChange={(BAngle) => {
               setBAngle(BAngle);
+              Cookies.set("BAngle", BAngle, { expires: 1 / (24 * 60) });
             }}
+            velocity={velocity}
+            altitude={altitude}
+            roc={roc}
+            torw={torw}
+            BAngle={BAngle}
           />
           <Graph_Cons
             unit={unit}

@@ -24,7 +24,16 @@ const FeatureCom = ({
           placeholder="Input Value"
           value={storedValue}
           onChange={(e) => {
-            onChange(parseFloat(e.target.value));
+            const value = parseFloat(e.target.value);
+            if (value > maxInput) {
+              onChange(maxInput)
+            }
+            else if (value < 0) {
+              onChange(0)
+            }
+            else{
+              onChange(value)
+            }
           }}
           min="0"
           max={maxInput}

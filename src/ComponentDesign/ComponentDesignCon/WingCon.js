@@ -31,6 +31,7 @@ const WingCon = (props) => {
                 storedValue = {props.wingArea}
                 onChange={(value) => props.onWingParamChange("wingArea", value)}
                 content={wingArea}
+                maxInput="1"
               />
             <div className={styles.Wing__Selection}>
               <div className={styles.wing__Selection_Title}>

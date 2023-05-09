@@ -29,7 +29,16 @@ const TailFeature = (props) => {
               type="number"
               placeholder="Input Value"
               onChange={(e) => {
-                props.onTailArmChange(parseFloat(e.target.value));
+                const value = parseFloat(e.target.value);
+                if (value > 100) {
+                  props.onTailArmChange(100)
+                }
+                else if (value < 0) {
+                  props.onTailArmChange(0)
+                }
+                else{
+                  props.onTailArmChange(value)
+                }
               }}
               min="0"
               max="100"
@@ -44,7 +53,16 @@ const TailFeature = (props) => {
               type="number"
               placeholder="Input Value"
               onChange={(e) => {
-                props.onTailSpanChange(parseFloat(e.target.value));
+                const value = parseFloat(e.target.value);
+                if (value > 60) {
+                  props.onTailSpanChange(60)
+                }
+                else if (value < 0) {
+                  props.onTailSpanChange(0)
+                }
+                else{
+                  props.onTailSpanChange(value)
+                }
               }}
               min="0"
               max="60"

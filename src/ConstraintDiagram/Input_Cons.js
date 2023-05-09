@@ -3,33 +3,7 @@ import { useEffect, useState } from "react";
 import { Equation } from "react-equation";
 import { QuestionHover } from "../index";
 const Input_Cons = (props) => {
-  // const [weight, setWeight] = useState("");
-  // const [isTrue, setIsTrue] = useState("2"); // set initial value to Imperial
-  // const [isSI, setIsSI] = useState(false);
-  // const handleSIchange = (isSI) => {
-  //   setIsSI(isSI);
-  // };
-  // Function to handle weight changes and convert values to the selected unit system
-  // const handleUnitSystemChange = () => {
-  //   const convertedValue = unitSystem === "si"
-  //   ? props.weight=Number(props.weight)*2.20462
-  //   : props.weight
-  //   setWeight(convertedValue);
-  // };
 
-  // function handleWeightChange(value) {
-  //   if (unitMultiplierWeight == 1) {
-  //     props.handleWeightChange(parseFloat(value));
-  //   } else {
-  //     const weight = parseFloat(value) * Number(unitMultiplierWeight);
-  //     props.handleWeightChange(weight);
-  //   }
-  // // }
-  // useEffect(()=> {
-  //   handleWeightChange(props.weight)
-  // },[unitMultiplierWeight])
-  // console.log(props.weight,unitMultiplierWeight)
-  // onChange={handleUnitChange}
   return (
     <>
       <div className={styles.option}>
@@ -44,7 +18,7 @@ const Input_Cons = (props) => {
         <div className={styles.container}>
           <div className={styles.sub_container1}>
             <div className={styles.header1}>
-              <b>Fundametal Requirements</b>
+              <b>Fundamental Requirements</b>
             </div>
 
             <div className={styles.input_container1}>
@@ -67,6 +41,7 @@ const Input_Cons = (props) => {
                   onChange={(e) => {
                     props.handleWeightChange(e.target.value);
                   }}
+                  value ={props.weight}
                 />
                 <p className={styles.inputUnit}>
                   {props.unit === "imperial" ? (
@@ -91,7 +66,8 @@ const Input_Cons = (props) => {
                   onChange={(e) => {
                     props.handleVelocityChange(e.target.value, "velocity");
                   }}
-                />
+                  value = {props.velocity}
+                  />
                 <p className={styles.inputUnit}>
                   {props.unit === "imperial" ? (
                     <Equation value="ft/s" />
@@ -122,7 +98,8 @@ const Input_Cons = (props) => {
                 onChange={(e) => {
                   props.handleAltitudeChange(e.target.value, "altitude");
                 }}
-              />
+                value ={props.altitude}
+                />
               <p className={styles.inputUnit}>
                 {props.unit === "imperial" ? (
                   <Equation value="ft" />
@@ -146,6 +123,7 @@ const Input_Cons = (props) => {
                 onChange={(e) => {
                   props.handleTORWChange(e.target.value, "torw");
                 }}
+                value ={props.torw}
               />
               <p className={styles.inputUnit}>
                 {props.unit === "imperial" ? (
@@ -175,6 +153,7 @@ const Input_Cons = (props) => {
                 onChange={(e) => {
                   props.handleROCChange(e.target.value, "roc");
                 }}
+                value ={props.roc}
               />
               <p className={styles.inputUnit}>
                 {props.unit === "imperial" ? (
@@ -193,6 +172,7 @@ const Input_Cons = (props) => {
                 onChange={(e) => {
                   props.handleBAngleChange(e.target.value, "BAngle");
                 }}
+                value ={props.BAngle}
               />
               <div className={styles.inputUnit}>
                 {props.unit === "imperial" ? "degree" : "degree"}
