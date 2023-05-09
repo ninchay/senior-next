@@ -74,7 +74,7 @@ const Input_Cons = (props) => {
                     <Equation value="ft/s" />
                   ) : (
                     <Equation value="m/s" />
-                  )}33  91
+                  )}
                 </p>
               </div>
             </div>
